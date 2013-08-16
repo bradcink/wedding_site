@@ -2,7 +2,7 @@ WeddingSite::Application.routes.draw do
   
   
   authenticated :user do
-    root to: 'home#index', as: :authenticated_root
+    root to: 'home#authenticated', as: :authenticated_root
   end
 
   unauthenticated do
