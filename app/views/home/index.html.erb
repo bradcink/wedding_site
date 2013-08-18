@@ -1,10 +1,11 @@
-    <div id="wrapper">
-      <div id="sidebar">
-        <a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
+<body>
+  <div id="wrapper">
+    <div id="sidebar">
+      <a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
         <!-- <div id="logo"> <a href="/"><img src="img/logo.svg" alt="logo" /></a> </div> -->
         <nav id="nav" class="navigation" role="navigation">
           <ul class="unstyled">
@@ -12,8 +13,6 @@
             <li data-section="2" class="popup-link-2"><i class="icon-pencil"></i><span>Signup</span></li>
           </ul>
         </nav><!-- /nav -->
-
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <div class="popup-box" id="popup-box-1">
           <div class="close">X</div>
             <%= render 'layouts/signin' %>
@@ -22,8 +21,6 @@
           <div class="close">X</div>
             <%= render 'layouts/signup' %>
         </div>
-
-      <script type="text/javascript" src="/javascripts/popup.js"></script>
       </div>      
       <div id="container">          
         <section class="section" id="section1" data-section="1">
@@ -45,8 +42,7 @@
       </div><!-- /container -->
     </div>
     <!-- JAVASCRIPTS -->
-    <script type="text/javascript" src="js/waypoints.min.js"></script>
-    <script type="text/javascript" src="js/jquery.knob.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="http://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
+</body>

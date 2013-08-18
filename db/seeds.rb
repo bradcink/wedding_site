@@ -10,7 +10,7 @@ admin = User.new(
   email: 'bradcink@auburn.edu',
   first_name: 'Brad', 
   last_name: 'Cink', 
-  roles: ['admin'], 
+  roles: ['admin', 'moderator'], 
   password: ENV["ADMIN_PASSWORD"],
   password_confirmation: ENV["ADMIN_PASSWORD"]
 )

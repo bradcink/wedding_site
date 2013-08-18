@@ -44,7 +44,7 @@ var map;
             console.log(e);
         }
       });
-
+      
       map.addMarker({
         lat: +33.469594,
         lng: -86.775169,
