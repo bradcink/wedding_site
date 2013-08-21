@@ -1,5 +1,8 @@
-<h3>Users</h3>
-<div class="span8">
+<body>
+  <div id="wrapper">    
+      <div id="container">
+        <h3>Users</h3>
+      <div class="span8">
 <table class="table table-condensed">
   <thead>
     <tr>
@@ -7,6 +10,8 @@
       <th>Email</th>
       <th>Registered</th>
       <th>Role</th>
+      <th>RSVP</th>
+      <th>RSVP</th>
       <th></th>
       <th></th>
     </tr>
@@ -14,10 +19,12 @@
   <tbody>
   <% @users.each do |user| %>
     <tr>
-      <td><%= link_to user.full_name, user %></td>
+      <td><%= user.full_name %></td>
       <td><%= user.email %></td>
       <td><%= user.created_at.to_date %></td>
       <td><%= user.roles.join(', ').titleize unless user.roles.first.nil? %></td>
+      <td><%= user.rsvp_count %></td>
+      <td><%= user.rsvp_confirmation %></td>
       <td>
         <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini btn-primary" type="button">Change role</a>
         <%= render user %>
@@ -27,4 +34,7 @@
   <% end %>
   </tbody>
 </table>
-</div>
+</div>  
+      </div><!-- /container -->
+    </div>
+</body>

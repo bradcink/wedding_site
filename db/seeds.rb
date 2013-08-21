@@ -12,7 +12,9 @@ admin = User.new(
   last_name: 'Cink', 
   roles: ['admin', 'moderator'], 
   password: ENV["ADMIN_PASSWORD"],
-  password_confirmation: ENV["ADMIN_PASSWORD"]
+  password_confirmation: ENV["ADMIN_PASSWORD"],
+  rsvp_confirmation: '1',
+  rsvp_count: '0'
 )
 admin.skip_confirmation!
 admin.save!

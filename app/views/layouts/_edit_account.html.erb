@@ -1,7 +1,7 @@
-<div id="container">
-      <div class="container-fluid-messages">
-          <%= render 'layouts/messages' %>  
-          </div>  
+  <div class="top">
+    <h2>Edit Account</h2>
+  </div>
+  <div class="bottom">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
   <%= f.input :first_name, :autofocus => true %>
@@ -16,4 +16,4 @@
 <% end %>
 <h3>Cancel my account</h3>
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
-
+</div>

@@ -17,6 +17,11 @@
   </head>
     <body class="<%= controller_name %> <%= action_name %>"></body>
       <div id="wrapper">
+        <div id="container">
+          <div class="container-fluid-messages">
+          <%= render 'layouts/messages' %>  
+          </div>
+          </div>  
         <%= yield %>
       </div>
   </html>

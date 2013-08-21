@@ -14,16 +14,21 @@
             <li data-section="3" class=""><i class="icon-info"></i><span>Info</span></li>
             
             <li><i class="icon-minus"></i><span><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i></span>
-             <li class""><%= link_to '<i class="icon-user"></i><span>Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li> 
+             <li class""><%= link_to '<i class="icon-user"></i><span>Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>
+             <li data-section="" class="popup-link-1"><i class="icon-laptop"></i><span>Edit Account</span></li> 
             <% if current_user.has_role? :admin %>
               <li><%= link_to '<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
             <% end %>
           </ul>
         </nav><!-- /nav -->
       </div>
-      <div id="container">         
+      <div class="popup-box" id="popup-box-1">
+          <div class="close">X</div>
+            <%= render 'layouts/edit_account' %>
+        </div>
+      <div id="container">      
         <section class="section" id="section1" data-section="1">
-          <div class="container-fluid"> 
+          <div class="container-fluid">
             <div class="row-fluid">
               <div class="span6 intro">
                 <hgroup>
@@ -78,65 +83,28 @@
                   </div><!-- /span12 -->
                 </div><!-- /row-fluid -->
                 
+                <%  if current_user.rsvp_not_confirmed? %>
+
+                <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
+                  <%= f.input :rsvp_count %>
+                  <%= f.input :rsvp_confirmation, :as => :boolean, :wrapper => :inline_checkbox %>
+  
+                  <%= f.button :submit, 'Update', :class => 'btn-inverse pull-right' %><span>Submit</span><i class="icon-circle-arrow-right"></i>
+                <% end %>
+
+                <% else %>
+
                 <form method="POST" action="#">
                   
                   <div class="row-fluid">
                     <div class="span6">
                       <div class="control-group">
-                        <label for="name" class="control-label">Name:</label>
-                        <div class="controls">
-                          <input class="span12" type="text" name="contact_name" id="name">
+                        <h5>We've already got your RSVP!<h5>
                         </div><!-- /controls -->
                       </div><!-- /control-group -->
                     </div><!-- /span6 -->
-                    <div class="span6">
-                      <div class="control-group">
-                        <label for="email" class="control-label">Email:</label>
-                        <div class="controls">
-                          <input class="span12" type="email" name="contact_email" id="email">
-                        </div><!-- /controls -->
-                      </div><!-- /control-group -->
-                    </div><!-- /span6 -->
-                  </div><!-- /row-fluid -->
-                  
-                  <div class="row-fluid">
-                    <div class="span6">
-                      <div class="control-group">
-                        <label for="phone" class="control-label">Phone Number:</label>
-                        <div class="controls">
-                          <input class="span12" type="tel" name="contact_phone" id="phone">  
-                        </div><!-- /controls -->
-                      </div><!-- /control-group -->
-                    </div><!-- /span6 -->
-                      <div class="span6">
-                        <div class="control-group">
-                        <label for="website" class="control-label">Your Website:</label>
-                        <div class="controls">
-                          <input class="span12" type="url" name="contact_website" id="website">
-                        </div><!-- /controls -->
-                      </div><!-- /control-group -->
-                    </div><!-- /span6 -->
-                  </div><!-- /row-fluid -->
-                  
-                  <div class="row-fluid">
-                    <div class="span12">
-                      <div class="control-group">
-                        <label for="message" class="control-label">Your Message:</label>
-                          <div class="controls">
-                          <textarea class="span12" type="text" name="contact_message" id="message" rows="4"></textarea>
-                        </div><!-- /controls -->
-                      </div><!-- /control-group -->
-                    </div><!-- /span12 -->
-                  </div><!-- /row-fluid -->
-                  
-                          <input type="hidden" name="save" value="contact">  
-                  <button type="submit" class="btn-inverse pull-right">
-                     <span>Submit</span>
-                    <i class="icon-circle-arrow-right"></i>
-                  </button>
-              </form><!-- /form -->
-            </div><!-- /span8 --> 
-            
+             <% end %>
+
             <div id="footer">
               <div class="row-fluid">
                 <div class="span12">

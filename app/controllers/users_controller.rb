@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       if @user.update_attributes(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'edit', notice: 'User was unsuccessfully updated.' }
       end
     end
   end
@@ -58,6 +58,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :first_name, :last_name, :roles => [])
+      params.require(:user).permit(:email, :first_name, :last_name, :rsvp_confirmation, :rsvp_count, :roles => [])
     end
 end
