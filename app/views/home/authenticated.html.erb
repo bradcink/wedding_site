@@ -87,22 +87,53 @@
 
                 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
                   <%= f.input :rsvp_count %>
-                  <%= f.input :rsvp_confirmation, :as => :boolean, :wrapper => :inline_checkbox %>
-  
-                  <%= f.button :submit, 'Update', :class => 'btn-inverse pull-right' %><span>Submit</span><i class="icon-circle-arrow-right"></i>
+
+    
+                  <div class="form-group">
+                    <div class="col-lg-10">
+                      <div class="btn switch switch-three">
+                        <input id="rsvp_confirmation_unsure" name="user[rsvp_confirmation]" value="2" type="radio" checked="">
+                        <label for="rsvp_confirmation_unsure" onclick="">Undecided</label>
+
+                         <input id="rsvp_confirmation_attending" name="user[rsvp_confirmation]" value="1" type="radio">
+                        <label for="rsvp_confirmation_attending" onclick="">Attending</label>
+
+                         <input id="rsvp_confirmation_not_attending" name="user[rsvp_confirmation]" value="0" type="radio">
+                        <label for="rsvp_confirmation_not_attending" onclick="">Not Attending</label>
+
+                        <span class="slide-button btn btn-success"></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <%= f.button :submit, 'Update', :class => 'btn-inverse pull-right' %>
                 <% end %>
 
                 <% else %>
+                 
+                 <%  if current_user.rsvp_confirmation == 1 %> 
 
-                <form method="POST" action="#">
-                  
                   <div class="row-fluid">
                     <div class="span6">
                       <div class="control-group">
-                        <h5>We've already got your RSVP!<h5>
+                        <h5>We're looking forward to celebrating with you!<h>
                         </div><!-- /controls -->
                       </div><!-- /control-group -->
                     </div><!-- /span6 -->
+
+                  <% end %>
+
+                  <% if current_user.rsvp_confirmation == 0 %>
+
+                  <div class="row-fluid">
+                    <div class="span6">
+                      <div class="control-group">
+                        <h5>Looking forward to celebrating with you next time around!<h>
+                        </div><!-- /controls -->
+                      </div><!-- /control-group -->
+                    </div><!-- /span6 -->
+
+                    <% end %>
              <% end %>
 
             <div id="footer">

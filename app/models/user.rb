@@ -22,7 +22,7 @@ class User
   end
 
   def rsvp_not_confirmed?
-    rsvp_confirmation == 0
+    rsvp_confirmation == 2
   end
 
 end

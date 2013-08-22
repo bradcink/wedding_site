@@ -2,5 +2,5 @@
 <p>User: <%= @user.full_name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 <p>Roles: <%= @user.roles.join(', ') if @user.roles %></p>
-<p>RSVP: <%= @user.rsvp_count %></p>
-<p>RSVP: <%= @user.rsvp_confirmation %></p>
+<p>Attending: <%= @user.rsvp_count %></p>
+<p>RSVP : <%= @user.rsvp_confirmation %></p>
