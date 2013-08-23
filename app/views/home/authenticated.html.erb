@@ -86,25 +86,37 @@
                 <%  if current_user.rsvp_not_confirmed? %>
 
                 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
-                  <%= f.input :rsvp_count %>
-
     
                   <div class="form-group">
                     <div class="col-lg-10">
                       <div class="btn switch switch-three">
-                        <input id="rsvp_confirmation_unsure" name="user[rsvp_confirmation]" value="2" type="radio" checked="">
-                        <label for="rsvp_confirmation_unsure" onclick="">Undecided</label>
+                          <input id="rsvp_confirmation_unsure" name="user[rsvp_confirmation]" value="2" type="radio" checked="">
+                          <label for="rsvp_confirmation_unsure" onclick="">Undecided</label>
 
-                         <input id="rsvp_confirmation_attending" name="user[rsvp_confirmation]" value="1" type="radio">
-                        <label for="rsvp_confirmation_attending" onclick="">Attending</label>
+                          <input id="rsvp_confirmation_attending" name="user[rsvp_confirmation]" value="1" type="radio">
+                          <label for="rsvp_confirmation_attending" onclick="">Attending</label>
 
-                         <input id="rsvp_confirmation_not_attending" name="user[rsvp_confirmation]" value="0" type="radio">
-                        <label for="rsvp_confirmation_not_attending" onclick="">Not Attending</label>
+                          <input id="rsvp_confirmation_not_attending" name="user[rsvp_confirmation]" value="0" type="radio">
+                          <label for="rsvp_confirmation_not_attending" onclick="">Not Attending</label>
 
                         <span class="slide-button btn btn-success"></span>
                       </div>
-                    </div>
-                  </div>
+                      </br>
+                        <div class="btn switch switch-four" id="number_attending" style="display:none;">
+                          <input id="rsvp_count_one" name="user[rsvp_count]" value="1" type="radio" checked="">
+                          <label for="rsvp_count_one" onclick=""><i class="icon-male"></i></label>
+
+                          <input id="rsvp_count_two" name="user[rsvp_count]" value="2" type="radio">
+                          <label for="rsvp_count_two" onclick=""><i class="icon-male"></i><i class="icon-female"></i></label>
+
+                          <input id="rsvp_count_three" name="user[rsvp_count]" value="3" type="radio">
+                          <label for="rsvp_count_three" onclick=""><i class="icon-male"></i><i class="icon-female"></i><i class="icon-male"></i></label>
+
+                          <input id="rsvp_count_four" name="user[rsvp_count]" value="4" type="radio">
+                          <label for="rsvp_count_four" onclick=""><i class="icon-male"></i><i class="icon-female"></i><i class="icon-male"></i><i class="icon-female"></i></label>
+
+                        <span class="slide-button btn btn-success"></span>
+                      </div>
 
                   <%= f.button :submit, 'Update', :class => 'btn-inverse pull-right' %>
                 <% end %>
@@ -128,7 +140,7 @@
                   <div class="row-fluid">
                     <div class="span6">
                       <div class="control-group">
-                        <h5>Looking forward to celebrating with you next time around!<h>
+                        <h5>We're looking forward to celebrating with you next time around!<h>
                         </div><!-- /controls -->
                       </div><!-- /control-group -->
                     </div><!-- /span6 -->
