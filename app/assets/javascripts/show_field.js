@@ -10,13 +10,11 @@ $(document).ready(function(){
                     });
 
 $(document).ready(function(){
-					$('#sign-in-button').click(function() {
-					$('#sign-in-form').toggle();
-					});
-                    });
+$(".btn-inverse").click(function(){
+    var divToToggle = $( $(this).find("a").attr('href') );
+    $(".simple-form:visible").not(divToToggle).hide();
+    divToToggle.slideToggle("fast");
+  });
+});
 
-$(document).ready(function(){
-					$('#sign-up-button').click(function() {
-					$('#sign-up-form').toggle();
-					});
-                    });
+
