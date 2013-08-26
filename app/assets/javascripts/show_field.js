@@ -8,3 +8,15 @@ $(document).ready(function(){
                         }
                       });
                     });
+
+$(document).ready(function(){
+					$('#sign-in-button').click(function() {
+					$('#sign-in-form').toggle();
+					});
+                    });
+
+$(document).ready(function(){
+					$('#sign-up-button').click(function() {
+					$('#sign-up-form').toggle();
+					});
+                    });

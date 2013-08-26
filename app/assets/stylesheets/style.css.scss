@@ -60,6 +60,14 @@ a:hover {
 	text-decoration: none;
 }
 
+label {
+	
+	color: #F1F1F1;
+}
+
+.label-rsvp {
+	color: #000000;
+}
 
 /* Navigation */
 
@@ -398,6 +406,8 @@ IMG.displayed {
 
 }
 
+
+
 /* Section 2 */ 
 
 #section2{
@@ -424,7 +434,9 @@ IMG.displayed {
 
 #section3 {
 	
+	background:#336699;
 	color: #F1F1F1;
+	padding-bottom: 0px;
 }
 
 #section3 h2 {
@@ -542,7 +554,7 @@ IMG.displayed {
     padding-right: 10px;
 }
 
-#section5 .content .span4 {
+#section5 .content .span4 .span8 {
 	padding-right: 25px;
 }
 
