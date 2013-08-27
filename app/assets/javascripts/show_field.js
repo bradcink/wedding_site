@@ -1,5 +1,5 @@
 $(document).ready(function(){
-                    $("input[name='user[rsvp_confirmation]']").click(function(){
+                    $("input[name='user[rsvp_confirmation]']").on('click',function(){
                     if($(this).val() == "1") {
                       $("#number_attending").slideDown("fast");
                         }
@@ -7,14 +7,25 @@ $(document).ready(function(){
                       $("#number_attending").slideUp("fast");
                         }
                       });
+
+                    $(".btn-inverse").on('click',function(){
+                        var divToToggle = $( $(this).find("a").attr('href') );
+                        $(".simple-form:visible").not(divToToggle).hide();
+                        divToToggle.slideToggle("fast");
+                      });
+
+                    $("#faq").on('click',function(){
+                        $("#faq-field").show();
+                        $("#edit-field").hide();
+                         return false;
+                      });
+                    $("#edit").on('click',function(){
+                        $("#edit-field").show();
+                        $("#faq-field").hide();
+                         return false;
+                      });
                     });
 
-$(document).ready(function(){
-$(".btn-inverse").click(function(){
-    var divToToggle = $( $(this).find("a").attr('href') );
-    $(".simple-form:visible").not(divToToggle).hide();
-    divToToggle.slideToggle("fast");
-  });
-});
+
 
 

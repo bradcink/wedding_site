@@ -9,9 +9,6 @@
  * Designed and built based on Twitter Bootstrap.
  * Tags: multipurpose, agency theme, one page, single page, responsive, green, flat */
 
-
-
-@import url(http://fonts.googleapis.com/css-family=Open+Sans-300,400,700.css);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400);
 
 /* Global */
@@ -67,6 +64,13 @@ label {
 
 .label-rsvp {
 	color: #000000;
+}
+
+.simple_form {
+ 
+  label {
+    color: #000000;
+  }
 }
 
 /* Navigation */
@@ -514,6 +518,11 @@ IMG.displayed {
     margin-bottom: 18px;
 }
 
+div.row-fluid.content.faq {
+	height: 100px;
+	background-color: #336699;
+}
+
 /* Section 5 */
 
 #section5 {
@@ -531,6 +540,11 @@ IMG.displayed {
 #section5 .content {
 	position: relative;
 	background:#336699;
+}
+
+#section5 .content-edit-account {
+	position: relative;
+	background:#123556;
 }
 
 #section5 .content .alt {
@@ -569,10 +583,6 @@ IMG.displayed {
 #section5 #footer p {
 	font-size: 14px; font-size: 1.4rem;
 }
-
-
-
-
 
 /* Media Queries */
 

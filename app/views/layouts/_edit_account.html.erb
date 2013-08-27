@@ -1,19 +1,62 @@
-  <div class="top">
-    <h2>Edit Account</h2>
-  </div>
-  <div class="bottom">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
-  <%= f.input :first_name, :autofocus => true %>
-  <%= f.input :last_name %>
-  <%= f.input :email, :required => true %>
-  <% if current_user.password_required? %>
-    <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
-    <%= f.input :password_confirmation, :required => false %>
-    <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-  <% end %>
-  <%= f.button :submit, 'Update', :class => 'btn-primary' %>
-<% end %>
-<h3>Cancel my account</h3>
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+<div id="edit-field" style="display:none;">
+<section class="section" id="section4 edit-account" >
+          <div class="container-fluid">
+            <div class="row-fluid title">
+              <div class="span3">
+                <h2>Edit Account</h2>
+              </div><!-- /span3 -->
+              <div class="span9 hidden-phone">  
+                <hr>
+              </div><!-- /span9 -->
+            </div><!-- /row-fluid -->
+            <div class="row-fluid content">
+              <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
+                <%= f.input :first_name, :autofocus => true %>
+                <%= f.input :last_name %>
+                <%= f.input :email, :required => true %>
+                <% if current_user.password_required? %>
+                  <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
+                  <%= f.input :password_confirmation, :required => false %>
+                  <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+                <% end %>
+                </br>
+                <h5>Change RSVP</h5>           
+                <div class="form-group">
+                    <div class="col-lg-10">
+                      <div class="btn switch switch-three">
+                          <input id="rsvp_confirmation_unsure" name="user[rsvp_confirmation]" value="2" type="radio" checked="">
+                          <label for="rsvp_confirmation_unsure" onclick="" class="label-rsvp">Undecided</label>
+
+                          <input id="rsvp_confirmation_attending" name="user[rsvp_confirmation]" value="1" type="radio">
+                          <label for="rsvp_confirmation_attending" onclick="" class="label-rsvp">Attending</label>
+
+                          <input id="rsvp_confirmation_not_attending" name="user[rsvp_confirmation]" value="0" type="radio">
+                          <label for="rsvp_confirmation_not_attending" onclick="" class="label-rsvp">Not Attending</label>
+
+                        <span class="slide-button btn btn-success"></span>
+                      </div>
+                      </br>
+                        <div class="btn switch switch-four" id="number_attending" style="display:none;">
+                          <input id="rsvp_count_one" name="user[rsvp_count]" value="1" type="radio" checked="">
+                          <label for="rsvp_count_one" onclick="" class="label-rsvp"><i class="icon-male"></i></label>
+
+                          <input id="rsvp_count_two" name="user[rsvp_count]" value="2" type="radio">
+                          <label for="rsvp_count_two" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i></label>
+
+                          <input id="rsvp_count_three" name="user[rsvp_count]" value="3" type="radio">
+                          <label for="rsvp_count_three" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i><i class="icon-male"></i></label>
+
+                          <input id="rsvp_count_four" name="user[rsvp_count]" value="4" type="radio">
+                          <label for="rsvp_count_four" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i><i class="icon-male"></i><i class="icon-female"></i></label>
+
+                        <span class="slide-button btn btn-success"></span>
+                      </div>
+                    </div>
+                  </div>
+
+                <%= f.button :submit, 'Update', :class => 'btn-inverse' %>
+              <% end %>
+            </div>
+          </div>
+</section>
 </div>

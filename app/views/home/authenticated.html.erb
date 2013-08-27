@@ -9,24 +9,19 @@
         <!-- <div id="logo"> <a href="/"><img src="img/logo.svg" alt="logo" /></a> </div> -->
         <nav id="nav" class="navigation" role="navigation">
           <ul class="unstyled">
-            <li class="active" data-section="1"><i class="icon-home"></i> <span>Home</span></li>
-            <li data-section="2" class=""><i class="icon-envelope"></i> <span>RSVP</span></li>
-            <li data-section="3" class=""><i class="icon-info"></i><span>Info</span></li>
+            <li class="active" data-section="1"><i class="icon-home"></i><span>Home</span></li>
+            <li data-section="2" class=""><i class="icon-envelope"></i><span>RSVP</span></li>
+            <li data-section="3" class=""><i class="icon-info"></i><span>&nbsp;&nbsp;&nbsp;Info</span></li>
             <li data-section="4" class=""><i class="icon-instagram"></i><span>Social</span></li>
-            
-            <li><i class="icon-minus"></i><span><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i><i class="icon-minus"></i></span>
-             <li class""><%= link_to '<i class="icon-user"></i><span>Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>
-             <li data-section="" class="popup-link-1"><i class="icon-laptop"></i><span>Edit Account</span></li> 
-            <% if current_user.has_role? :admin %>
-              <li><%= link_to '<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
-            <% end %>
+            <div class="btn-group">
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+              </ul>
+            </div>
+            <li class ""><%= link_to'<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
           </ul>
         </nav><!-- /nav -->
       </div>
-      <div class="popup-box" id="popup-box-1">
-          <div class="close">X</div>
-            <%= render 'layouts/edit_account' %>
-        </div>
       <div id="container">      
         <section class="section" id="section1" data-section="1">
           <div class="container-fluid">
@@ -36,15 +31,23 @@
                   <h1>Welcome!</h1>
                   <h3>This is the Sooter-Cink wedding page.</h3>
                 </hgroup>
-                <button class="btn-inverse" data-section="2">
-                  Learn <span>More</span>
-                  <i class="icon-circle-arrow-down"></i>
-                </button>  
+                <div class="btn-group">
+                  <a class="btn-inverse" href="#" data-toggle="dropdown"><i class="icon-circle-arrow-down"></i>User</a>
+                    <span class="icon-caret-down"></span></a>
+                  <ul class="dropdown-menu">
+                    <li id="edit"><a href="#"><i class="icon-fixed-width icon-pencil"></i>&nbsp;Edit</a></li>
+                    <li id="faq"><a href="#"><i class="icon-fixed-width icon-question"></i>&nbsp;FAQ</a></li>
+                    <li class""><%= link_to '<i class="icon-user"></i><span>&nbsp;&nbsp;&nbsp;Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>
+                    <li class="divider"></li>
+                    <li><%= link_to '<i class="icon-fixed-width icon-trash"></i>&nbsp;Delete'.html_safe, registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></li>
+                   </ul>
+                </div>  
               </div><!-- /span6 -->
             </div><!-- /row-fluid -->
           </div><!-- /container-fluid --> 
         </section><!-- /section -->
-
+        <%= render 'layouts/edit_account' %>
+        <%= render 'layouts/faq' %>
         <section class="section" id="section5" data-section="2">
           <div class="container-fluid">
             <div class="row-fluid title">
@@ -117,8 +120,11 @@
 
                         <span class="slide-button btn btn-success"></span>
                       </div>
+                    </div>
+
 
                   <%= f.button :submit, 'Update', :class => 'btn-inverse pull-right' %>
+                </div>
                 <% end %>
 
                 <% else %>
@@ -128,7 +134,7 @@
                   <div class="row-fluid">
                     <div class="span6">
                       <div class="control-group">
-                        <h5>We're looking forward to celebrating with you!<h>
+                        <h5>We're looking forward to celebrating with you!</h5>
                         </div><!-- /controls -->
                       </div><!-- /control-group -->
                     </div><!-- /span6 -->
@@ -140,25 +146,17 @@
                   <div class="row-fluid">
                     <div class="span6">
                       <div class="control-group">
-                        <h5>We're looking forward to celebrating with you next time around!<h>
+                        <h5>We're looking forward to celebrating with you next time around!</h5>
                         </div><!-- /controls -->
                       </div><!-- /control-group -->
                     </div><!-- /span6 -->
 
                     <% end %>
              <% end %>
-
-            <div id="footer">
-              <div class="row-fluid">
-                <div class="span12">
-                  
-                </div><!-- /span12 -->
-              </div><!-- /row-fluid --> 
-            </div><!-- /footer -->
-          </div><!-- /row-fluid --> 
-        </div><!-- /container-fluid -->
-        
-      </section>
+           </div>
+        </div><!-- /row-fluid --> 
+      </div><!-- /container-fluid -->     
+    </section>
 
         <section class="section" id="section4" data-section="3">
           <div class="container-fluid">
@@ -332,9 +330,12 @@
         <section class="section" id="section5" data-section="4">
           <div class="container-fluid">
             <div class="row-fluid title">
-              <div class="span4">
+              <div class="span3">
                 <h2>Social</h2>
-              </div><!-- /span4 -->
+              </div><!-- /span3 -->
+              <div class="span9 hidden-phone">  
+                <hr>
+              </div><!-- /span9 -->
             </div><!-- /row-fluid -->
             <div class="row-fluid content">
               <div class="span8">
@@ -365,6 +366,7 @@
           </div><!-- /container -->
         </section>
     </div>
+  </div>
     <!-- JAVASCRIPTS -->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="http://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
