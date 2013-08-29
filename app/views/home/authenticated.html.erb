@@ -13,12 +13,13 @@
             <li data-section="2" class=""><i class="icon-envelope"></i><span>RSVP</span></li>
             <li data-section="3" class=""><i class="icon-info"></i><span>&nbsp;&nbsp;&nbsp;Info</span></li>
             <li data-section="4" class=""><i class="icon-instagram"></i><span>Social</span></li>
+            <li data-section="5" class=""><i class="icon-sort-by-attributes"></i><span>Timeline</span></li>
             <div class="btn-group">
               <ul class="dropdown-menu">
                 <li class="divider"></li>
               </ul>
             </div>
-            <li class ""><%= link_to'<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
+            <li><%= link_to'<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
           </ul>
         </nav><!-- /nav -->
         </div><!-- /sidebar -->
@@ -343,6 +344,7 @@
           </div>
           </div><!-- /container -->
         </section>
+        <%=render"layouts/timeline"%>
     </div>
   </div>
     <!-- JAVASCRIPTS -->
