@@ -316,6 +316,24 @@ IMG.displayed {
     margin-top: 25px;
 }
 
+.btn-inverse-faq {
+
+	background: none #F1F1F1;
+    color: #336699;
+    margin-top: 25px;
+    border: medium none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px; font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 20px;
+    padding: 8px 14px;
+    text-align: left;
+    text-transform: uppercase;
+    width: 190px;
+}
+
 .btn-default, .btn-inverse {
 	border: medium none;
     cursor: pointer;
@@ -519,7 +537,7 @@ IMG.displayed {
 }
 
 div.row-fluid.content.faq {
-	height: 100px;
+	margin-bottom: 18px;
 	background-color: #336699;
 }
 
@@ -528,7 +546,7 @@ div.row-fluid.content.faq {
 #section5 {
 	background:#336699;
 	color: #F1F1F1;
-	padding-bottom: 0px;
+	margin-bottom: 18px;
 }
 
 #section5 h4.intro {
