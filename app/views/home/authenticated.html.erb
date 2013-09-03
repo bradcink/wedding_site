@@ -13,7 +13,8 @@
             <li data-section="2" class=""><i class="icon-envelope"></i><span>RSVP</span></li>
             <li data-section="3" class=""><i class="icon-info"></i><span>&nbsp;&nbsp;&nbsp;Info</span></li>
             <li data-section="4" class=""><i class="icon-instagram"></i><span>Social</span></li>
-            <li data-section="5" class=""><i class="icon-sort-by-attributes"></i><span>Timeline</span></li>
+            <li data-section="5" class=""><i class="icon-credit-card"></i><span>Donate</span></li>
+            <li data-section="6" class=""><i class="icon-sort-by-attributes"></i><span>Timeline</span></li>
             <div class="btn-group">
               <ul class="dropdown-menu">
                 <li class="divider"></li>
@@ -344,11 +345,61 @@
           </div>
           </div><!-- /container -->
         </section>
+        <section class="section" id="section4" data-section="5" >
+          <div class="container-fluid">
+            <div class="row-fluid title">
+              <div class="span3">
+                <h2>Donate</h2>
+              </div><!-- /span3 -->
+              <div class="span9 hidden-phone">  
+                <hr>
+              </div><!-- /span9 -->
+            </div><!-- /row-fluid -->
+            <div class="row-fluid content">
+              <div class="credit-card-input no-js" id="skeuocard">
+              <p class="no-support-warning">
+                Either you have Javascript disabled, or you're using an unsupported browser! Contact bradcink@me.com with any questions or concerns.
+              </p>
+              <label for="cc_type">Card Type</label>
+              <select name="cc_type">
+                <option value="">...</option>
+                <option value="visa">Visa</option>
+                <option value="discover">Discover</option>
+                <option value="mastercard">MasterCard</option>
+                <option value="amex">American Express</option>
+                <option value="dinersclubintl">Diners Club</option>
+              </select>
+              <label for="cc_number">Card Number</label>
+              <input type="number" name="cc_number" id="cc_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" size="19">
+              <label for="cc_exp">Expiration Date (mm/yy)</label>
+              <input type="number" name="cc_exp" id="cc_exp" placeholder="00/00">
+              <label for="cc_name">Cardholder's Name</label>
+              <input type="number" name="cc_name" id="cc_name" placeholder="John Doe">
+              <label for="cc_cvc">Card Validation Code</label>
+              <input type="number" name="cc_cvc" id="cc_cvc" placeholder="123" maxlength="3" size="3">
+            </div>
+          <!-- END FORM -->
+        </div>
+        </div><!-- /container -->
+      </section>
         <%=render"layouts/timeline"%>
     </div>
   </div>
     <!-- JAVASCRIPTS -->
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="http://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
+    <%= javascript_include_tag "jquery.js", 'skeuocard.js' %>
+    <script>
+
+      $(document).ready(function(){
+        if($('html').hasClass('ie10') || $('html').hasClass('webkit') || 
+           $('html').hasClass('firefox') || $('html').hasClass('opera')){
+          window.card = new Skeuocard($("#skeuocard"), {
+            debug: false
+          });
+        }
+      });
+
+    </script>
 
   </body>
