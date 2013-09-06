@@ -13,7 +13,7 @@
             <li data-section="2" class=""><i class="icon-envelope"></i><span>RSVP</span></li>
             <li data-section="3" class=""><i class="icon-info"></i><span>&nbsp;&nbsp;&nbsp;Info</span></li>
             <li data-section="4" class=""><i class="icon-instagram"></i><span>Social</span></li>
-            <li data-section="5" class=""><i class="icon-credit-card"></i><span>Donate</span></li>
+            <li data-section="5" class=""><i class="icon-credit-card"></i><span>Gifts</span></li>
             <li data-section="6" class=""><i class="icon-sort-by-attributes"></i><span>Timeline</span></li>
             <div class="btn-group">
               <ul class="dropdown-menu">
@@ -158,19 +158,19 @@
               <div class="span4">
                 <ul class="article-tags">
                   <% if current_user.has_role? :moderator %>
-                    <li data-blog="blog" class="current"><i class="icon-circle-arrow-right"></i>Rehearsal Dinner</li>
-                    <li data-blog="dribbble" class=""><i class="icon-circle-arrow-right"></i>Wedding</li>
-                    <li data-blog="instagram" class=""><i class="icon-circle-arrow-right"></i>Reception</li>
-                    <li data-blog="github" class=""><i class="icon-circle-arrow-right"></i>Hotels</li>
+                    <li data-blog="rehearsal" class="current"><i class="icon-circle-arrow-right"></i>Rehearsal Dinner</li>
+                    <li data-blog="ceremony" class=""><i class="icon-circle-arrow-right"></i>Wedding</li>
+                    <li data-blog="reception" class=""><i class="icon-circle-arrow-right"></i>Reception</li>
+                    <li data-blog="hotels" class=""><i class="icon-circle-arrow-right"></i>Hotels</li>
                   <% else %>
-                    <li data-blog="dribbble" class="current"><i class="icon-circle-arrow-right"></i>Wedding</li>
-                    <li data-blog="instagram" class=""><i class="icon-circle-arrow-right"></i>Reception</li>
-                    <li data-blog="github" class=""><i class="icon-circle-arrow-right"></i>Hotels</li>
+                    <li data-blog="ceremony" class="current"><i class="icon-circle-arrow-right"></i>Wedding</li>
+                    <li data-blog="reception" class=""><i class="icon-circle-arrow-right"></i>Reception</li>
+                    <li data-blog="hotels" class=""><i class="icon-circle-arrow-right"></i>Hotels</li>
                   <% end %>      
                       </ul>
               </div><!-- /span4 -->
               <% if current_user.has_role? :moderator %>
-              <div class="span8 slide current" data-blog="blog" style="display: block; ">
+              <div class="span8 slide current" data-blog="rehearsal" style="display: block; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Location</h4>
@@ -186,7 +186,7 @@
                   </div><!-- /span6 -->
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
-              <div class="span8 slide" data-blog="dribbble" style="display: none; ">
+              <div class="span8 slide" data-blog="reception" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Wedding</h4>
@@ -203,7 +203,7 @@
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
               
-              <div class="span8 slide" data-blog="instagram" style="display: none; ">
+              <div class="span8 slide" data-blog="reception" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Reception</h4>
@@ -220,7 +220,7 @@
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
               
-              <div class="span8 slide" data-blog="github" style="display: none; ">
+              <div class="span8 slide" data-blog="hotels" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Courtyard Mariott</h4>
@@ -245,7 +245,7 @@
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
               <% else %>
-              <div class="span8 slide current" data-blog="dribbble" style="display: block; ">
+              <div class="span8 slide current" data-blog="ceremony" style="display: block; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Wedding</h4>
@@ -262,7 +262,7 @@
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
               
-              <div class="span8 slide" data-blog="instagram" style="display: none; ">
+              <div class="span8 slide" data-blog="reception" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Reception</h4>
@@ -279,7 +279,7 @@
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
               
-              <div class="span8 slide" data-blog="github" style="display: none; ">
+              <div class="span8 slide" data-blog="hotels" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Courtyard Mariott</h4>
@@ -349,15 +349,52 @@
           <div class="container-fluid">
             <div class="row-fluid title">
               <div class="span3">
-                <h2>Donate</h2>
+                <h2>Gifts</h2>
               </div><!-- /span3 -->
               <div class="span9 hidden-phone">  
                 <hr>
               </div><!-- /span9 -->
             </div><!-- /row-fluid -->
+            <div class="row-fluid desc">
+              <div class="span8">
+                <p>Are you considering showing your love and support of us during this special occasion through a wedding gift? We've got all the pots and pans we need! Between college (Grace Ann) and high school (Brad), we've been blessed with the opportunities to go on mission trips to Central America. Please defer all of your kindness to our friends in Guatemala and Mexico on behalf of us!</p>
+              </div><!-- /span8 -->
+            </div>
             <div class="row-fluid content">
+              <div class="span4">
+                <ul class="ss-mission-photo">
+                  <li data-blog="grace-ann" class="ss-circle-photo ss-circle-mission-grace-ann"></li>
+                  <li data-blog="brad" class="ss-circle-photo ss-circle-mission-brad"></li>                        
+                </ul>
+              </div><!-- /span4 -->
               
-        </div>
+              <div class="span8 slide current" data-blog="grace-ann">
+                <div class="row-fluid">
+                  <div class="span6 expand">
+                    <h4>Guatemala</h4>
+                    <p>'This was a great trip'</p>
+                  </div><!-- /span6 -->
+                  <div class="span6 visible-desktop">
+                    <h4></h4>
+                    <p>'I loved it!'</p>
+                  </div><!-- /span6 -->
+                  
+                </div><!-- /row-fluid -->
+              </div><!-- /span8 -->
+              
+              <div class="span8 slide" data-blog="brad">
+                <div class="row-fluid">
+                  <div class="span6 expand">
+                    <h4>Mexico</h4>
+                    <p>'Akil is the best'</p>
+                  </div><!-- /span6 -->
+                  <div class="span6 visible-desktop">
+                    <h4></h4>
+                    <p>There were a lot of neat things to do!</p>
+                  </div><!-- /span6 -->
+                </div><!-- /row-fluid -->
+              </div><!-- /span8 -->
+            </div>
         </div><!-- /container -->
       </section>
         <%=render"layouts/timeline"%>
@@ -461,6 +498,30 @@
   });
   
   $('#section4 .article-tags li').on('click', function () {
+      
+      var section = $(this).parents('.span4');
+      var category = $(this).attr('data-blog');
+      var articles = section.siblings();
+      
+      // Change Tab BG's
+      $(this).siblings('.current').removeClass('current');
+      $(this).addClass('current');
+    
+    // Hide/Show other articles
+      section.siblings('.current').removeClass('current').hide();
+      
+      $(articles).each(function (index) {
+        
+        var newCategory = $(this).attr('data-blog');
+        
+        if ( newCategory == category ) {
+          $(this).slideDown('1000', "easeInQuart").addClass('current');
+        }
+      });
+
+  });
+
+  $('#section4 .ss-mission-photo li').on('click', function () {
       
       var section = $(this).parents('.span4');
       var category = $(this).attr('data-blog');
