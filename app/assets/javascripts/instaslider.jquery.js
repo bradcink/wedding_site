@@ -33,7 +33,8 @@
         defaults = {
             clientID: '791b688830374d95a18d08422d8c096e',
             access_token: '215420131.791b688.a15b74b8f7dc4e64b68ea7b4b924129b',
-            search: '@gasooter',
+            search: '@gasooter', // Change to 'sooter-cink-wedding' from '@gasooter' or whatever hash when the time is right
+            hash: '',
             prevClass: 'prev',
             nextClass: 'next',
             limit: '10',

@@ -11,18 +11,18 @@
           <ul class="unstyled">
             <li class="active" data-section="1"><i class="icon-home"></i><span>Home</span></li>
             <li data-section="2" class=""><i class="icon-envelope"></i><span>RSVP</span></li>
-            <li data-section="3" class=""><i class="icon-info"></i><span>&nbsp;&nbsp;&nbsp;Info</span></li>
+            <li data-section="3" class="">&nbsp;<i class="icon-info"></i><span>&nbsp;&nbsp;Info</span></li>
             <li data-section="4" class=""><i class="icon-instagram"></i><span>Social</span></li>
             <li data-section="5" class=""><i class="icon-credit-card"></i><span>Gifts</span></li>
             <li data-section="6" class=""><i class="icon-sort-by-attributes"></i><span>Timeline</span></li>
-            <div class="btn-group">
-              <ul class="dropdown-menu">
-                <li class="divider"></li>
-              </ul>
-            </div>
+        </nav><!-- /nav -->
+        <% if current_user.has_role? :admin %>
+        <nav id="nav" role="naviagtion">
+          <ul class="unstyled">
             <li><%= link_to'<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
           </ul>
-        </nav><!-- /nav -->
+        </nav>
+        <% end %>
         </div><!-- /sidebar -->
       <div id="container">      
         <section class="section" id="section1" data-section="1">
@@ -186,7 +186,7 @@
                   </div><!-- /span6 -->
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
-              <div class="span8 slide" data-blog="reception" style="display: none; ">
+              <div class="span8 slide" data-blog="ceremony" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Wedding</h4>
@@ -332,8 +332,7 @@
                       <div class="myslider"></div>
                         <script>
                         $('.myslider').instaSlider({
-                        clientID: '791b688830374d95a18d08422d8c096e',
-                        access_token: '215420131.791b688.a15b74b8f7dc4e64b68ea7b4b924129b'
+                        
                         });
                         </script>
                       </div>
