@@ -38,10 +38,10 @@
                     <span class="icon-caret-down"></span></a>
                   <ul class="dropdown-menu">
                     <li id="edit"><a href="#"><i class="icon-fixed-width icon-pencil"></i>&nbsp;Edit</a></li>
-                    <li id="faq"><a href="#"><i class="icon-fixed-width icon-question"></i>&nbsp;FAQ</a></li>
+                    <li id="faq"><a href="#"><i class="icon-fixed-width icon-question">&nbsp;</i>&nbsp;FAQ</a></li>
                     <li class""><%= link_to '<i class="icon-user"></i><span>&nbsp;&nbsp;&nbsp;Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>
                     <li class="divider"></li>
-                    <li><%= link_to '<i class="icon-fixed-width icon-trash"></i>&nbsp;Delete'.html_safe, registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></li>
+                    <li><%= link_to '<i class="icon-fixed-width icon-trash"></i>&nbsp;Delete'.html_safe, registration_path(resource_name), :data => { :confirm => "You want to delete your Sooter-Cink wedding account?" }, :method => :delete %></li>
                    </ul><!-- /dropddown-menu -->
                 </div><!-- /btn-group -->  
               </div><!-- /span6 -->
@@ -332,7 +332,7 @@
                       <div class="myslider"></div>
                         <script>
                         $('.myslider').instaSlider({
-                        
+
                         });
                         </script>
                       </div>
