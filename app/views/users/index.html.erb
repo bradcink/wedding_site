@@ -10,7 +10,9 @@
       <th>Email</th>
       <th>Registered</th>
       <th>Role</th>
-      <th>RSVP</th>
+      <th></th>
+      <th>#</th>
+      <th></th>
       <th>RSVP</th>
       <th></th>
       <th></th>
@@ -23,8 +25,20 @@
       <td><%= user.email %></td>
       <td><%= user.created_at.to_date %></td>
       <td><%= user.roles.join(', ').titleize unless user.roles.first.nil? %></td>
+      <td></td>
       <td><%= user.rsvp_count %></td>
-      <td><%= user.rsvp_confirmation %></td>
+      <td></td>
+      <td>
+      <% if current_user.rsvp_confirmation == 1 %>
+                    <td>Attending</td>
+                  <% end %>
+                  <% if current_user.rsvp_confirmation == 0 %>
+                    <td>Not Attending</td>
+                  <% end %>
+                  <% if current_user.rsvp_confirmation == 2 %>
+                    <td>Undecided</td>
+                  <% end %>
+                </td>
       <td>
         <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini btn-primary" type="button">Change role</a>
         <%= render user %>

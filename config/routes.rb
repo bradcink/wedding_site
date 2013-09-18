@@ -15,8 +15,9 @@ WeddingSite::Application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :users
+  resources :users, :charges
   get "home/index"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

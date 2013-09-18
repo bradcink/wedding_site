@@ -10,6 +10,7 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "jbuilder", "~> 1.2"
 gem 'figaro'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 group :development do
   gem "guard-rspec"
   gem "pry"

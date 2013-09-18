@@ -31,6 +31,19 @@ $(document).ready(function(){
                         $("#faq-field").hide();
                          return false;
                       });
+                    $("#next-button").click(function(){
+                        $("#donation").submit();
+                        $("#donate-form").show();
+                        $("#submit-payment-prep").show();
+                        $("#amount-form").hide();
+                         return false;
+                      });
+                    $("#back-button").on('click',function(){
+                        $("#donate-form").show();
+                        $("#amount-form").show();
+                        $("#submit-payment-prep").hide();
+                         return false;
+                      });
                     $("#confirmation-reset").on('click',function(){
                         $("#confirmation-reset-id").show();
                          return false;
