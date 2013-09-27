@@ -28,7 +28,7 @@
         <section class="section" id="section1" data-section="1">
           <div class="container-fluid">
             <div class="row-fluid">
-              <div class="span6 intro">
+              <div class="span4 intro">
                 <hgroup>
                   <h1>Welcome!</h1>
                   <h3>This is the Sooter-Cink wedding page.</h3>
@@ -56,8 +56,6 @@
               <div class="span4">
                 <h2>RSVP</h2>
               </div><!-- /span4 -->
-              <div class="span8 hidden-phone alt">
-              </div><!-- /span8 -->
             </div><!-- /row-fluid -->
             <div class="row-fluid content">
               <div class="span4">
@@ -81,10 +79,6 @@
                 </div><!-- /row -->
               </div><!-- /span4 -->
               <div class="span8">              
-                <div class="row-fluid">
-                  <div class="span12">
-                  </div><!-- /span12 -->
-                </div><!-- /row-fluid -->
                 <%  if current_user.rsvp_not_confirmed? %>
                 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
                   <div class="form-group">
@@ -100,6 +94,7 @@
                       </div><!-- /btn-switch -->
                       </br>
                         <div class="btn switch switch-four" id="number_attending" style="display:none;">
+                          
                           <input id="rsvp_count_one" name="user[rsvp_count]" value="1" type="radio" checked="">
                           <label for="rsvp_count_one" onclick="" class="label-rsvp"><i class="icon-male"></i></label>
                           <input id="rsvp_count_two" name="user[rsvp_count]" value="2" type="radio">
@@ -115,38 +110,39 @@
                   </div><!-- /form-group -->
                 <% end %><!-- /simple-form -->
                 <% else %><!-- /not_confirmed? -->                 
-                <% if current_user.rsvp_confirmation == 1 %> 
-                  <div class="row-fluid">
-                    <div class="span6">
-                      <div class="control-group">
-                        <h5>We're looking forward to celebrating with you!</h5>
-                        </div><!-- /control-group -->
-                      </div><!-- /span -->
-                    </div><!-- /row-fluid -->
-                  <% end %><!-- /current_user -->
-                  <% if current_user.rsvp_confirmation == 0 %>
-                    <div class="row-fluid">
-                      <div class="span6">
-                        <div class="control-group">
-                          <h5>We're looking forward to celebrating with you next time around!</h5>
-                        </div><!-- /control-group -->
-                      </div><!-- /span -->
-                    </div><!-- /row-fluid -->
-                  <% end %><!-- /current_user -->
+                  <div class="span12 visible-desktop">
+                    <div class="control-group">
+                      <div class ="flip">
+                        <div class="card"> 
+                          <div class="face front"> 
+                          </div> 
+                          <div class="popin face back"> 
+                          </div> 
+                        </div>
+                      </div> 
+                    </div><!-- /control-group -->
+                  </div><!-- /span -->
+                </div>
+                    <script>
+                    $(document).ready(function(){
+                        $('.flip').click(function(){
+                        $(this).find('.card').addClass('flipped').mouseleave(function(){
+                            $(this).removeClass('flipped');
+                        });
+                        return false;
+                        });
+                    });
+                    </script>
                 <% end %><!-- /not_confirmed? -->
-              </div><!-- /span -->
             </div><!-- /row-fluid --> 
           </div><!-- /container-fluid -->     
         </section>
         <section class="section" id="section4" data-section="3">
           <div class="container-fluid">
-            <div class="row-fluid title">
-              <div class="span3">
+            <div class="row-fluid">
+              <div class="span4">
                 <h2>Info</h2>
               </div><!-- /span3 -->
-              <div class="span9 hidden-phone">  
-                <hr>
-              </div><!-- /span9 -->
             </div><!-- /row-fluid -->
             <div class="row-fluid content">
             </br>
@@ -225,7 +221,7 @@
                   <div class="span6 expand">
                     <h4>Courtyard Mariott</h4>
                     <p>The Courtyard Mariott is loacated off of Highway 31 and is a short drive to Covenant Presbyterian.</p>
-                    <p>Sooter-Cink Wedding Price: $89.00/night</p>
+                    <p>Sooter-Cink Wedding Price: $89/night</p>
                     <IMG class="displayed" src="http://i0.wp.com/www.logoeps.com/wp-content/uploads/2013/01/courtyard-marriott-logo-vector.png?resize=400%2C400" width="100px" height="100px" alt="Courtyard Mariott"> 
                     <div class="pull-right read-more">
                       <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cink/Sooter%20Wedding%5EBHMHW%60CSWCSWA%7CCSWCSWB%6089.00%60USD%60false%601/9/14%601/13/14%6012/20/13&app=resvlink&stop_mobi=yes" rel="external">Book It &nbsp;<i class="icon-tags"></i></a>
@@ -234,7 +230,7 @@
                   <div class="span6 visible-desktop">
                     <h4>Aloft Soho Square</h4>
                     <p>Aloft is located in downtown Homewood and is a short drive to Covenant Presbyterian and to Downotown Birmingham</p>
-                    <p>Sooter-Cink Wedding Price: $119.00/night</p>
+                    <p>Sooter-Cink Wedding Price: $119/night</p>
                   </br>
                     <IMG class="displayed" src="http://i.imgur.com/3yeO6Lv.png" width="100px" height="100px" alt="Aloft Soho Square"> 
                     <div class="pull-right read-more">
@@ -284,7 +280,7 @@
                   <div class="span6 expand">
                     <h4>Courtyard Mariott</h4>
                     <p>The Courtyard Mariott is loacated off of Highway 31 and is a short drive to Covenant Presbyterian.</p>
-                    <p>Sooter-Cink Wedding Price: $89.00/night</p>
+                    <p>Sooter-Cink Wedding Price: $89/night</p>
                     <IMG class="displayed" src="http://i0.wp.com/www.logoeps.com/wp-content/uploads/2013/01/courtyard-marriott-logo-vector.png?resize=400%2C400" width="100px" height="100px" alt="Courtyard Mariott"> 
                     <div class="pull-right read-more">
                       <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cink/Sooter%20Wedding%5EBHMHW%60CSWCSWA%7CCSWCSWB%6089.00%60USD%60false%601/9/14%601/13/14%6012/20/13&app=resvlink&stop_mobi=yes" rel="external">Book It &nbsp;<i class="icon-tags"></i></a>
@@ -293,7 +289,7 @@
                   <div class="span6 visible-desktop">
                     <h4>Aloft Soho Square</h4>
                     <p>Aloft is located in downtown Homewood and is a short drive to Covenant Presbyterian and to Downotown Birmingham</p>
-                    <p>Sooter-Cink Wedding Price: $119.00/night</p>
+                    <p>Sooter-Cink Wedding Price: $119/night</p>
                   </br>
                     <IMG class="displayed" src="http://i.imgur.com/3yeO6Lv.png" width="100px" height="100px" alt="Aloft Soho Square"> 
                     <div class="pull-right read-more">
@@ -310,12 +306,9 @@
         <section class="section" id="section5" data-section="4">
           <div class="container-fluid">
             <div class="row-fluid title">
-              <div class="span3">
+              <div class="span4">
                 <h2>Social</h2>
-              </div><!-- /span3 -->
-              <div class="span9 hidden-phone">  
-                <hr>
-              </div><!-- /span9 -->
+              </div><!-- /span4 -->
             </div><!-- /row-fluid -->
             <div class="row-fluid content">
               <div class="span8">
@@ -347,11 +340,8 @@
         <section class="section" id="section4" data-section="5" >
           <div class="container-fluid">
             <div class="row-fluid title">
-              <div class="span3">
-                <h2>Gifts</h2>
-              </div><!-- /span3 -->
-              <div class="span9 hidden-phone">  
-                <hr>
+              <div class="span4">
+                <h2>Gifts</h2> 
               </div><!-- /span9 -->
             </div><!-- /row-fluid -->
             <div class="row-fluid desc">
