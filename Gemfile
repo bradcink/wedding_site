@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "rails", "4.0.0"
+gem "ruby", "2.0.0"
 gem "mongoid", github: "mongoid/mongoid"
 gem "sass-rails", "~> 4.0.0"
 gem "uglifier", ">= 1.3.0"
@@ -42,3 +43,4 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "hashugar", github: "alex-klepa/hashugar"
 gem "rails_12factor"
+gem "heroku"
