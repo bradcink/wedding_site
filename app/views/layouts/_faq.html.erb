@@ -1,29 +1,21 @@
-<div id="faq-field" style="display:none;">
+<div id="faq-field" style="display:none;" data-section"10">
 <section class="section" id="section4" >
           <div class="container-fluid">
             <div class="row-fluid title">
               <div class="span3">
                 <h2>FAQ</h2>
               </div><!-- /span3 -->
-              <div class="span9 hidden-phone">  
-                <hr>
-              </div><!-- /span9 -->
             </div><!-- /row-fluid -->
             <div class="row-fluid content faq">
               <div>
-                <button class="btn-inverse" id="confirmation-reset"><a href="#"></a>Didn't recieve confirmation instructions?</button>
+                <button class="btn-inverse" id="password-reset"><a href="#"></a>Forgot Your Password?</button>
               </div>
-                <div id="confirmation-reset-id" style="display:none;"> 
-                    <%= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => {:method => :post , :class => 'form-vertical' }) do |f| %>
-                    <%= f.input :email, :required => true, :autofocus => true %>
-                    <%= f.button :submit, 'Resend instructions', :class => 'btn-inverse-faq' %>
-                    <% end -%>
+                <div id="password-reset-id" style="display:none;">
+                  <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post , :class => 'form-vertical' }) do |f| %>
+                  <%= f.input :email, :required => true, :autofocus => true %>
+                  <%= f.button :submit, 'Send reset password info', :class => 'btn-inverse-faq' %>
+                <% end %>                   
               </div>
-            <h5> 
-            <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-              <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
-            <% end -%>
-            </h5>
             </div><!-- /row-fluid -->
           </div><!-- /container-fluid -->
 </section>

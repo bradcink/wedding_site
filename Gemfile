@@ -32,10 +32,11 @@ group :test do
   gem "rb-inotify", "~> 0.9"
 end
 
+gem 'devise_invitable', '~> 1.3.0', :github => 'scambra/devise_invitable'
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem "font-awesome-sass-rails"
 gem "simple_form", github: "plataformatec/simple_form"
-gem "devise", "~> 3.0.0"
+gem "devise", "~> 3.1.0"
 gem "cancan"
 gem "omniauth"
 gem "omniauth-facebook"

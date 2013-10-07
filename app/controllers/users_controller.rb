@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.xls
+    end
   end
 
   def show
@@ -22,9 +26,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to root_path, notice: 'User was successfully created.' }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to root_path, alert: 'User was not created. Please try again.' } 
       end
     end
   end
@@ -34,9 +38,9 @@ class UsersController < ApplicationController
     respond_to do |format|
 
       if @user.update_attributes(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'User was successfully updated.' }
       else
-        format.html { render action: 'edit', notice: 'User was unsuccessfully updated.' }
+        format.html { redirect_to root_path, alert: 'User was unsuccessfully updated. Please try again.' }
       end
     end
   end

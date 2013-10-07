@@ -1,8 +1,41 @@
-<h2>Sign in</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.input :email, :autofocus => true %>
-  <%= f.input :password %>
-  <%= f.input :remember_me, :as => :boolean, :wrapper => :inline_checkbox if devise_mapping.rememberable? %>
-  <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
-<% end %>
-<%= render "devise/shared/links" %>
+<body>
+  <div id="wrapper">
+    <div id="sidebar">
+      <a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+        <!-- <div id="logo"> <a href="/"><img src="img/logo.svg" alt="logo" /></a> </div> -->
+        <nav id="nav" class="navigation" role="navigation">
+          <ul class="unstyled">
+            <li id="faq"><i class="icon-question"></i><span>FAQ</span></li>
+          </ul>
+        </nav><!-- /nav -->        
+      </div>      
+     <div id="container">        
+        <section class="section" id="section1">
+          <div class="container-fluid"> 
+            <div class="row-fluid">
+	            <div class="row-fluid title">
+	              <div class="span3">
+	                <h2>Sign In</h2>
+	              </div><!-- /span3 -->
+	            </div><!-- /row-fluid -->
+	            <div class="row-fluid content">
+	             <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+			  <%= f.input :email, :autofocus => true %>
+			  <%= f.input :password %>
+			  <%= f.input :remember_me, :as => :boolean, :wrapper => :inline_checkbox if devise_mapping.rememberable? %>
+			  <%= f.button :submit, "Sign in", :class => 'btn-inverse' %>
+			  <% end %>
+				<div class="span20 hidden-phone">
+					<img class="displayed" src="http://i.imgur.com/ZzbvZA6.png" alt="The Fish Market | Birmingham">
+				</div>
+			</div>
+		  </div>
+		</section>
+		<%= render 'layouts/faq' %>
+	</div>
+</div>
+</body>

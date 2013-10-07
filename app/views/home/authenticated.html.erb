@@ -20,6 +20,7 @@
         <nav id="nav" role="naviagtion">
           <ul class="unstyled">
             <li><%= link_to'<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
+            <li id="add-user"><a href="#"><i class="icon-plus"></i><span>Add User</span></a></li>
           </ul>
         </nav>
         <% end %>
@@ -50,6 +51,10 @@
         </section><!-- /section -->
         <%= render 'layouts/edit_account' %>
         <%= render 'layouts/faq' %>
+        <% if current_user.has_role? :admin %>
+        <%= render 'layouts/add_user' %>
+        <% end %>
+
         <section class="section" id="section5" data-section="2">
           <div class="container-fluid">
             <div class="row-fluid title">
@@ -323,7 +328,7 @@
                    <div class="controls">
                     <div class="prev entypo-left-open-big"></div>
                     <div class="next entypo-right-open-big"></div>
-
+                    <script src="https://raw.github.com/stevenschobert/instafeed.js/master/instafeed.min.js"></script>
                     <!-- Grab My Latest Instagram Photo -->
                     <script type="text/javascript">
 
@@ -489,7 +494,7 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="http://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
     <script src="https://checkout.stripe.com/v2/checkout.js"></script>
-    <script src="https://raw.github.com/stevenschobert/instafeed.js/master/instafeed.min.js"></script>
+    
     <script>
     var map;
     $(document).ready(function(){

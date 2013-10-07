@@ -23,11 +23,20 @@ $(document).ready(function(){
                       });
                     $("#faq").on('click',function(){
                         $("#faq-field").show();
+                        $("html, body").animate({scrollTop: $("#faq-field").offset().top});
                         $("#edit-field").hide();
                          return false;
                       });
                     $("#edit").on('click',function(){
                         $("#edit-field").show();
+                        $("html, body").animate({scrollTop: $("#edit-field").offset().top});
+                        $("#faq-field").hide();
+                         return false;
+                      });
+                    $("#add-user").on('click',function(){
+                        $("#add-user-field").show();
+                        $("html, body").animate({scrollTop: $("#add-user-field").offset().top});
+                        $("#edit-field").hide();
                         $("#faq-field").hide();
                          return false;
                       });
@@ -44,8 +53,8 @@ $(document).ready(function(){
                         $("#submit-payment-prep").hide();
                          return false;
                       });
-                    $("#confirmation-reset").on('click',function(){
-                        $("#confirmation-reset-id").show();
+                    $("#password-reset").on('click',function(){
+                        $("#password-reset-id").show();
                          return false;
                       });
                     });

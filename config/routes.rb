@@ -12,7 +12,8 @@ WeddingSite::Application.routes.draw do
   devise_for :users, controllers: {
     registrations: "users/registrations", 
     passwords: "users/passwords", 
-    omniauth_callbacks: "users/omniauth_callbacks"
+    omniauth_callbacks: "users/omniauth_callbacks",
+    invitations: 'users/invitations'
   }
 
   resources :users, :charges

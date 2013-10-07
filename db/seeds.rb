@@ -16,5 +16,4 @@ admin = User.new(
   rsvp_confirmation: '1',
   rsvp_count: '0'
 )
-admin.skip_confirmation!
 admin.save!
