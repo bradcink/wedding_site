@@ -78,6 +78,9 @@ test:
   production:
     sessions:
       default:
+          hosts: 
+          - paulo.mongohq.com:10077
+          database: Sooter-Cink-Wedding
           uri: <%= ENV['MONGOHQ_URL'] %>
           options:
             skip_version_check: true
