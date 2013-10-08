@@ -9,7 +9,7 @@
         <!-- <div id="logo"> <a href="/"><img src="img/logo.svg" alt="logo" /></a> </div> -->
         <nav id="nav" class="navigation" role="navigation">
           <ul class="unstyled">
-            <li data-section="2" class=""><i class="icon-question"></i><span>FAQ</span></li>
+            <li id="faq" data-section"10"><a href="#"><i class="icon-question"></i><span>FAQ</span></a></li>
           </ul>
         </nav><!-- /nav -->        
       </div>      
@@ -24,10 +24,6 @@
                 </hgroup>
                 <button class="btn-inverse"><a href="#sign-in-form"></a>
                   Sign <span>In</span>
-                  <i class="icon-circle-arrow-down"></i>
-                </button>
-                <button class="btn-inverse"><a href="#sign-up-form"></a>
-                  Sign <span>Up</span>
                   <i class="icon-circle-arrow-down"></i>
                 </button>
               </br>
@@ -47,30 +43,11 @@
                   <% end %>
                 </div>
               </div>
-                <div id="sign-up-form" class="simple-form" style="display:none;">
-                  <div class="span8">
-              
-                <div class="row-fluid">
-                  <div class="span12">
-                  </div><!-- /span12 -->
-                </div><!-- /row-fluid -->
-                  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-                   <%= link_to '<i class="icon-facebook-sign"></i> Sign Up with Facebook'.html_safe, user_omniauth_authorize_path(:facebook) %>
-                   </br></br>   
-                    <%= f.input :first_name, :autofocus => true %>
-                    <%= f.input :last_name %>
-                    <%= f.input :email, :required => true %>
-                    <%= f.input :password, :required => true %>
-                    <%= f.input :password_confirmation, :required => true %>
-                    <%= f.input :rsvp_confirmation, :as => :hidden, :input_html => { :value => "2" } %>
-                    <%= f.button :submit, 'Sign Up', :class => 'btn-inverse' %>
-                  <% end %>
-                </div>
-                </div>
               </div>
             </div><!-- /row-fluid -->
           </div><!-- /container-fluid --> 
-        </section><!-- /section --> 
+        </section><!-- /section -->
+        <%= render 'layouts/faq' %> 
       </div><!-- /container -->
     </div>
     <!-- JAVASCRIPTS -->

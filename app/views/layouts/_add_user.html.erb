@@ -1,0 +1,20 @@
+<div id="add-user-field" style="display:none;">
+<section class="section" id="section4" >
+          <div class="container-fluid">
+            <div class="row-fluid title">
+              <div class="span3">
+                <h2>Add User</h2>
+              </div><!-- /span3 -->
+            </div><!-- /row-fluid -->
+            <div class="row-fluid content faq">
+                    <%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+                      <%= devise_error_messages! %>
+                    <% resource.class.invite_key_fields.each do |field| -%>
+                      <%= f.input field %>
+                    <% end -%>
+                    <%= f.button :submit, 'Add User', :class => 'btn-inverse-faq' %>
+                    <% end %>
+            </div><!-- /row-fluid -->
+          </div><!-- /container-fluid -->
+</section>
+</div>

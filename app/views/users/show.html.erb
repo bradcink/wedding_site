@@ -1,6 +1,24 @@
-<h3>User</h3>
-<p>User: <%= @user.full_name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
-<p>Roles: <%= @user.roles.join(', ') if @user.roles %></p>
-<p>Attending: <%= @user.rsvp_count %></p>
-<p>RSVP : <%= @user.rsvp_confirmation %></p>
+<body>
+  <div id="wrapper">    
+      <div id="container">
+        <h3>User</h3>
+      <div class="span8">
+		<p>User: <%= @user.full_name %></p>
+		<p>Email: <%= @user.email if @user.email %></p>
+		<p>Roles: <%= @user.roles.join(', ') if @user.roles %></p>
+		<p>Attending: <%= @user.rsvp_count %></p>
+		<p>RSVP: <% if current_user.rsvp_confirmation == 1 %>
+		                    <td>Attending</td>
+		                  <% end %>
+		                  <% if current_user.rsvp_confirmation == 0 %>
+		                    <td>Not Attending</td>
+		                  <% end %>
+		                  <% if current_user.rsvp_confirmation == 2 %>
+		                    <td>Undecided</td>
+		                  <% end %></p>
+		<p>Donation: <%= @user.donation_amount %></p>
+
+	       </div>
+	   </div>
+	</div>
+</body>

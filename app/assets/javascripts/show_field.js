@@ -23,16 +23,38 @@ $(document).ready(function(){
                       });
                     $("#faq").on('click',function(){
                         $("#faq-field").show();
+                        $("html, body").animate({scrollTop: $("#faq-field").offset().top});
                         $("#edit-field").hide();
                          return false;
                       });
                     $("#edit").on('click',function(){
                         $("#edit-field").show();
+                        $("html, body").animate({scrollTop: $("#edit-field").offset().top});
                         $("#faq-field").hide();
                          return false;
                       });
-                    $("#confirmation-reset").on('click',function(){
-                        $("#confirmation-reset-id").show();
+                    $("#add-user").on('click',function(){
+                        $("#add-user-field").show();
+                        $("html, body").animate({scrollTop: $("#add-user-field").offset().top});
+                        $("#edit-field").hide();
+                        $("#faq-field").hide();
+                         return false;
+                      });
+                    $("#next-button").click(function(){
+                        $("#donation").submit();
+                        $("#donate-form").show();
+                        $("#submit-payment-prep").show();
+                        $("#amount-form").hide();
+                         return false;
+                      });
+                    $("#back-button").on('click',function(){
+                        $("#donate-form").show();
+                        $("#amount-form").show();
+                        $("#submit-payment-prep").hide();
+                         return false;
+                      });
+                    $("#password-reset").on('click',function(){
+                        $("#password-reset-id").show();
                          return false;
                       });
                     });

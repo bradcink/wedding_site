@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+ruby '2.0.0'
 gem "rails", "4.0.0"
 gem "mongoid", github: "mongoid/mongoid"
 gem "sass-rails", "~> 4.0.0"
@@ -10,6 +11,7 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "jbuilder", "~> 1.2"
 gem 'figaro'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 group :development do
   gem "guard-rspec"
   gem "pry"
@@ -31,11 +33,13 @@ group :test do
   gem "rb-inotify", "~> 0.9"
 end
 
+gem 'devise_invitable', '~> 1.3.0', :github => 'scambra/devise_invitable'
 gem "bootstrap-sass", "~> 2.3.2.1"
 gem "font-awesome-sass-rails"
 gem "simple_form", github: "plataformatec/simple_form"
-gem "devise", "~> 3.0.0"
+gem "devise", "~> 3.1.0"
 gem "cancan"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "hashugar", github: "alex-klepa/hashugar"
+gem "rails_12factor"

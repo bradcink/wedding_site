@@ -30,6 +30,10 @@ h2.ss-subtitle:after{
 .ss-circle{
 	border: 5px solid #123556;
 }
+
+.ss-circle-photo{
+	border: 5px solid #123556;
+}
 .ss-circle-deco:before{
 	width: 29%;
 	height: 0px;
@@ -200,6 +204,29 @@ h2.ss-subtitle:after{
 	float: middle;
 	padding-left: 2%;
 }
+
+.ss-circle-photo{
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    text-indent: -9000px;
+    text-align: left;
+    -webkit-box-shadow: 
+		0px 2px 5px rgba(0,0,0,0.7) inset, 
+		0px 0px 0px 1px rgba(61,64,85,0.3);
+    -moz-box-shadow: 
+		0px 2px 5px rgba(0,0,0,0.7) inset, 
+		0px 0px 0px 1px rgba(61,64,85,0.3);
+    box-shadow: 
+		0px 2px 5px rgba(0,0,0,0.7) inset, 
+		0px 0px 0px 1px rgba(61,64,85,0.3);
+	background-size: cover;
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: static;
+}
+
 .ss-circle{
     border-radius: 50%;
     overflow: hidden;
@@ -208,19 +235,31 @@ h2.ss-subtitle:after{
     text-align: left;
     -webkit-box-shadow: 
 		0px 2px 5px rgba(0,0,0,0.7) inset, 
-		0px 0px 0px 12px rgba(61,64,85,0.3);
+		0px 0px 0px 1px rgba(61,64,85,0.3);
     -moz-box-shadow: 
 		0px 2px 5px rgba(0,0,0,0.7) inset, 
-		0px 0px 0px 12px rgba(61,64,85,0.3);
+		0px 0px 0px 1px rgba(61,64,85,0.3);
     box-shadow: 
 		0px 2px 5px rgba(0,0,0,0.7) inset, 
-		0px 0px 0px 12px rgba(61,64,85,0.3);
+		0px 0px 0px 1px rgba(61,64,85,0.3);
 	background-size: cover;
 	background-color: #f0f0f0;
 	background-repeat: no-repeat;
 	background-position: center center;
 	position: static;
 }
+
+.ss-small .ss-circle-photo{
+	width: 100px;
+	height: 100px;
+}
+
+.ss-mission-photo .ss-circle-photo{
+	width: 120px;
+	height: 120px;
+}
+
+
 .ss-small .ss-circle{
 	width: 100px;
 	height: 100px;
@@ -317,40 +356,40 @@ h2.ss-subtitle:after{
     background-image: url(images/2.jpg);
 }
 .ss-circle-3{
-    background-image: url(../images/3.jpg);
+    background-image: url(images/BJC01.JPG);
 }
 .ss-circle-4{
-    background-image: url(../images/4.jpg);
+    background-image: url(images/BJC02.JPG);
 }
 .ss-circle-5{
-    background-image: url(../images/5.jpg);
+    background-image: url(images/BJC03.JPG);
 }
 .ss-circle-6{
-    background-image: url(../images/6.jpg);
+    background-image: url(images/BJC04.JPG);
 }
 .ss-circle-7{
-    background-image: url(../images/7.jpg);
+    background-image: url(images/BJC05.JPG);
 }
 .ss-circle-8{
-    background-image: url(../images/8.jpg);
+    background-image: url(images/BJC06.jpg);
 }
 .ss-circle-9{
-    background-image: url(../images/9.jpg);
+    background-image: url(images/GA01.png);
 }
 .ss-circle-10{
-    background-image: url(../images/10.jpg);
+    background-image: url(images/GA02.jpg);
 }
 .ss-circle-11{
-    background-image: url(../images/11.jpg);
+    background-image: url(images/GA03.jpg);
 }
 .ss-circle-12{
-    background-image: url(../images/12.jpg);
+    background-image: url(images/GA04.jpg);
 }
 .ss-circle-13{
-    background-image: url(../images/13.jpg);
+    background-image: url(images/GA05.jpg);
 }
 .ss-circle-14{
-    background-image: url(../images/14.jpg);
+    background-image: url(images/GA06.jpg);
 }
 .ss-circle-15{
     background-image: url(../images/15.jpg);

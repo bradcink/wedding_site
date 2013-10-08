@@ -501,6 +501,15 @@ IMG.displayed {
 	display: block;
 }
 
+.ss-circle-mission-grace-ann{
+    background-image: url(images/mission-grace-ann.jpg);
+}
+
+.ss-circle-mission-brad{
+	margin: 40px 0 0;
+    background-image: url(images/mission-brad.jpg);
+}
+
 #section4 ul.article-tags {
     border-top: 1px solid #151515;
     margin: 40px 0 0;
@@ -601,6 +610,11 @@ div.row-fluid.content.faq {
 #section5 #footer p {
 	font-size: 14px; font-size: 1.4rem;
 }
+
+/* div.row-fluid.content.instaslider {
+	margin-bottom: 18px;
+	background-color: #336699;
+}*/
 
 /* Media Queries */
 
