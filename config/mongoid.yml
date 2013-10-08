@@ -78,9 +78,6 @@ test:
   production:
     sessions:
       default:
-        database: Sooter-Cink-Wedding
-        username: bradcink
-        password: 1Sherlock1
           uri: <%= ENV['MONGOHQ_URL'] %>
           options:
             skip_version_check: true
