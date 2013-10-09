@@ -74,7 +74,7 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
-if <% uri = URI.parse(ENV['MONGOHQ_URL']) %>
+<% uri = URI.parse(ENV['MONGOHQ_URL']) %>
 production:
   sessions:
     default:
@@ -83,4 +83,3 @@ production:
       password: <%= uri.password %>
       hosts:
         - <%= uri.host %>:<%= uri.port %>
-<% end %>
