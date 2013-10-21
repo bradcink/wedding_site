@@ -2,7 +2,7 @@
   <div id="wrapper">
     <%= render 'layouts/sidebar' %>      
      <div id="container">        
-        <section class="section" id="section1">
+        <section class="section" id="section1-index">
           <div class="container-fluid"> 
             <div class="row-fluid">
 	            <div class="row-fluid title">
@@ -21,9 +21,6 @@
 				  <%= f.input :rsvp_confirmation, :as => :hidden, :input_html => { :value => "2" } %>
 				  <%= f.button :submit, "Submit", :class => 'btn-inverse' %>
 				<% end %>
-				<div class="span20 hidden-phone">
-					<img class="displayed" src="http://i.imgur.com/WeLqWSf.png" alt="Designed by Mark Lawrence | Mobile, Alabama">
-				</div>
 			</div>
 		  </div>
 		</section>

@@ -16,7 +16,7 @@
   padding:15px;
   box-shadow: 0 0 20px #999;
   border-radius:2px;
-  max-height: 500px;
+  max-height: 50%;
   max-width: 90%;
 }
 
@@ -53,10 +53,10 @@
       text-align: left;
       line-height: 1.3em;
     }
-    .next {
+    .next-instafeed {
       position: absolute;
       top: 59%;
-      left: 43%;
+      right: 33.7%; 
       font-size: 150%;
       color: #fff;
       background: rgba(0,0,0,.5);
@@ -66,10 +66,10 @@
       line-height: .5em;
       cursor: pointer;
     }
-     .prev {
+     .prev-instafeed {
      position: absolute;
       top: 59%;
-      left: 0%;
+      left: -3.1%;
       font-size: 150%;
       color: #fff;
       background: rgba(0,0,0,.5);
@@ -79,49 +79,34 @@
       line-height: .5em;
       cursor: pointer;
     }
-   
 
-   @media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
-    /* iPhone only */
-      
-     .next {
-      position: absolute;
-      top: 2%;
-      left: 43%;
-      font-size: 150%;
-      color: #fff;
-      background: rgba(0,0,0,.5);
-      margin: 1%;
-      border-radius: 400px;
-      padding: 1em;
-      line-height: .5em;
-      cursor: pointer;
-    }
-     .prev {
-      position: absolute;
-      top: 2%;
-      left: 0;
-      font-size: 150%;
-      color: #fff;
-      background: rgba(0,0,0,.5);
-      margin: 1%;
-      border-radius: 400px;
-      padding: 1em;
-      line-height: .5em;
-      cursor: pointer;
-    }
-    #caption {
-      z-index: 99999999;
-      color: rgba(255,255,255,1);
-      font-size: 16px;
-      position: relative;
-      left: 50px;
-      text-shadow: 0 1px 1px #000;
-      line-height: .9em;
-      font-family: helvetica neue;
-      font-weight: 200;
-      width: 75%;
-      text-align: left;
-      line-height: 1.3em;
-    }
-   }
+
+#slideshow {
+    position:relative;
+    height:230px;
+    width: 100%;
+}
+
+#slideshow IMG {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:8;
+    height:230px;
+    width:300px;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
+}
+
+.popin-lean{
+  background:#fff;
+  padding:5px;
+  box-shadow: 0 0 10px #999;
+  border-radius:2px;
+}

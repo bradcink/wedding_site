@@ -6,7 +6,7 @@
         <div class="row-fluid">
           <div class="span4">
             <h2>Users</h2>
-            <h5>Download: <%= link_to "Excel", users_path(format: "xls") %></h5>
+            <h5>Download: <%= link_to "Excel", users_path(format: "xls"), {:style=>'color:#151515;'} %></h5>
           </div><!-- /span3 -->
         </div><!-- /row-fluid -->   
         <div class="span8">
@@ -34,7 +34,6 @@
               <td><%= user.roles.join(', ').titleize unless user.roles.first.nil? %></td>
               <td></td>
               <td><%= user.rsvp_count %></td>
-              <td></td>
               <td>
               <% if current_user.rsvp_confirmation == 1 %>
                               <td>Attending</td>
@@ -56,8 +55,7 @@
               </tbody>
           </table>
         </div><!-- /span -->
-        </div>
+      </div><!-- /container -->
     </section> 
-  </div><!-- /container -->
   </div><!-- /wrapper -->
 </body>

@@ -1,145 +1,151 @@
 <body>
-    <div id="wrapper">
-        <div id="sidebar">
-        <a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <!-- <div id="logo"> <a href="/"><img src="img/logo.svg" alt="logo" /></a> </div> -->
-        <nav id="nav" class="navigation" role="navigation">
-          <ul class="unstyled">
-            <li class="active" data-section="1"><i class="icon-home"></i><span>Home</span></li>
-            <li data-section="2" class=""><i class="icon-envelope"></i><span>RSVP</span></li>
-            <li data-section="3" class="">&nbsp;<i class="icon-info"></i><span>&nbsp;&nbsp;Info</span></li>
-            <li data-section="4" class=""><i class="icon-instagram"></i><span>Social</span></li>
-            <li data-section="5" class=""><i class="icon-credit-card"></i><span>Gifts</span></li>
-            <li data-section="6" class=""><i class="icon-sort-by-attributes"></i><span>Timeline</span></li>
-        </nav><!-- /nav -->
-        <% if current_user.has_role? :admin %>
+  <div id="wrapper">
+    <div id="sidebar">
+      <a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <!-- <div id="logo"> <a href="/"><img src="img/logo.svg" alt="logo" /></a> </div> -->
+      <nav id="nav" class="navigation" role="navigation">
+        <ul class="unstyled">
+        <li class="active" data-section="1"><i class="icon-home"></i><span>Home</span></li>
+        <li data-section="2" class=""><i class="icon-envelope"></i><span>RSVP</span></li>
+        <li data-section="3" class="">&nbsp;<i class="icon-info"></i><span>&nbsp;&nbsp;Info</span></li>
+        <li data-section="4" class=""><i class="icon-instagram"></i><span>Social</span></li>
+        <li data-section="5" class=""><i class="icon-gift"></i><span>Gifts</span></li>
+        <li data-section="6" class=""><i class="icon-group"></i><span>Party</span></li>
+        <li data-section="7" class=""><i class="icon-sort-by-attributes"></i><span>Timeline</span></li>
+      </nav><!-- /nav -->
+      <% if current_user.has_role? :admin %>
         <nav id="nav" role="naviagtion">
           <ul class="unstyled">
             <li><%= link_to'<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
             <li id="add-user"><a href="#"><i class="icon-plus"></i><span>Add User</span></a></li>
           </ul>
         </nav>
-        <% end %>
-        </div><!-- /sidebar -->
-      <div id="container">      
-        <section class="section" id="section1" data-section="1">
-          <div class="container-fluid">
-            <div class="row-fluid">
-              <div class="span4 intro">
-                <hgroup>
-                  <h1>Welcome!</h1>
-                  <h3>This is the Sooter-Cink wedding page.</h3>
-                </hgroup>
-                <div class="btn-group">
-                  <a class="btn-inverse" href="#" data-toggle="dropdown"><i class="icon-circle-arrow-down"></i>User</a>
-                    <span class="icon-caret-down"></span></a>
-                  <ul class="dropdown-menu">
-                    <li id="edit"><a href="#"><i class="icon-fixed-width icon-pencil"></i>&nbsp;Edit</a></li>
-                    <li id="faq"><a href="#"><i class="icon-fixed-width icon-question">&nbsp;</i>&nbsp;FAQ</a></li>
-                    <li class""><%= link_to '<i class="icon-user"></i><span>&nbsp;&nbsp;&nbsp;Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to '<i class="icon-fixed-width icon-trash"></i>&nbsp;Delete'.html_safe, registration_path(resource_name), :data => { :confirm => "You want to delete your Sooter-Cink wedding account?" }, :method => :delete %></li>
-                   </ul><!-- /dropddown-menu -->
-                </div><!-- /btn-group -->  
-              </div><!-- /span6 -->
-            </div><!-- /row-fluid -->
-          </div><!-- /container-fluid --> 
-        </section><!-- /section -->
-        <%= render 'layouts/edit_account' %>
-        <%= render 'layouts/faq' %>
-        <% if current_user.has_role? :admin %>
+      <% end %>
+    </div><!-- /sidebar -->
+    <div id="container">      
+      <section class="section" id="section1" data-section="1">
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="alt-image img-circle thumb">
+              <img src="http://i.imgur.com/eC16cwf.jpg" alt="Grace Ann and Brad" class="img-circle blur">
+            </div>
+            <div class="span4 intro">
+              <hgroup>
+                <h1>Welcome!</h1>
+                <h3>Sooter-Cink Wedding</br>January 11, 2014</h3>
+              </hgroup>
+            <div class="btn-group">
+              <a class="btn-inverse" href="#" data-toggle="dropdown"><i class="icon-circle-arrow-down"></i>User</a><span class="icon-caret-down"></span></a>
+                <ul class="dropdown-menu">
+                  <li id="edit"><a href="#"><i class="icon-fixed-width icon-pencil"></i>&nbsp;Edit</a></li>
+                  <li id="faq"><a href="#"><i class="icon-fixed-width icon-question">&nbsp;</i>&nbsp;FAQ</a></li>
+                  <li class""><%= link_to '<i class="icon-user"></i><span>&nbsp;&nbsp;&nbsp;Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to '<i class="icon-fixed-width icon-trash"></i>&nbsp;Delete'.html_safe, registration_path(resource_name), :data => { :confirm => "You want to delete your Sooter-Cink wedding account?" }, :method => :delete %></li>
+                </ul><!-- /dropddown-menu -->
+            </div><!-- /btn-group -->  
+            </div><!-- /span4 -->
+          </div><!-- /row-fluid -->
+        </div><!-- /container-fluid --> 
+      </section><!-- /section -->
+      <%= render 'layouts/edit_account' %>
+      <%= render 'layouts/faq' %>
+      <% if current_user.has_role? :admin %>
         <%= render 'layouts/add_user' %>
-        <% end %>
-
-        <section class="section" id="section5" data-section="2">
-          <div class="container-fluid">
-            <div class="row-fluid title">
-              <div class="span4">
-                <h2>RSVP</h2>
-              </div><!-- /span4 -->
-            </div><!-- /row-fluid -->
-            <div class="row-fluid content">
-              <div class="span4">
-                <h4 class="intro">Can you make it?</h4>
-                <p>Take the time to RSVP and let us know if we can can count on you to celebrate our special day!</p>
-                <div class="row-fluid alt">
-                  <h5>Date:</h5>
-                  <span>January 11, 2014</span>
-                </div><!-- /row -->
-                <div class="row-fluid alt">
-                  <h5>Time:</h5>
-                  <span>6:00 PM</span>
-                </div><!-- /row -->
-                <div class="row-fluid alt">
-                  <h5>City:</h5>
-                  <span>&nbsp; Birmingham, Alabama</span>
-                </div><!-- /row -->
-                <div class="row-fluid alt">
-                  <img src="http://i.imgur.com/HSXYhsU.png" width="45px" height="45px">
-                  <span>&nbsp; Add to calendar</span>
-                </div><!-- /row -->
-              </div><!-- /span4 -->
-              <div class="span8">              
-                <%  if current_user.rsvp_not_confirmed? %>
+      <% end %>
+      <section class="section" id="section5" data-section="2">
+        <div class="container-fluid">
+          <div class="row-fluid title">
+            <div class="span4">
+              <h2>RSVP</h2>
+            </div><!-- /span4 -->
+          </div><!-- /row-fluid -->
+          <div class="row-fluid content">
+            <div class="span4">
+              <h4 class="intro">Can you make it?</h4>
+              <p>Take the time to RSVP and let us know if we can can count on you to celebrate our special day!</p>
+              <div class="row-fluid alt">
+                <h5>Date:</h5>
+                <span>January 11, 2014</span>
+              </div><!-- /row -->
+              <div class="row-fluid alt">
+                <h5>Time:</h5>
+                <span>6:00 PM</span>
+              </div><!-- /row -->
+              <div class="row-fluid alt">
+                <h5>City:</h5>
+                <span>&nbsp; Birmingham, Alabama</span>
+              </div><!-- /row -->
+              <div class="row-fluid alt">
+                <img src="http://i.imgur.com/HSXYhsU.png" width="45px" height="45px"></img>
+                <span>&nbsp; Add to calendar</span>
+              </div><!-- /row -->
+            </div><!-- /span4 -->
+            <div class="span8">              
+              <% if current_user.rsvp_not_confirmed? %>
                 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
-                  <div class="form-group">
-                    <div class="col-lg-10">
-                      <div class="btn switch switch-three">
-                          <input id="rsvp_confirmation_unsure" name="user[rsvp_confirmation]" value="2" type="radio" checked="">
-                          <label for="rsvp_confirmation_unsure" onclick="" class="label-rsvp">Undecided</label>
-                          <input id="rsvp_confirmation_attending" name="user[rsvp_confirmation]" value="1" type="radio">
-                          <label for="rsvp_confirmation_attending" onclick="" class="label-rsvp">Attending</label>
-                          <input id="rsvp_confirmation_not_attending" name="user[rsvp_confirmation]" value="0" type="radio">
-                          <label for="rsvp_confirmation_not_attending" onclick="" class="label-rsvp">Not Attending</label>
-                        <span class="slide-button btn btn-success"></span>
-                      </div><!-- /btn-switch -->
-                      </br>
-                        <div class="btn switch switch-four" id="number_attending" style="display:none;">
-                          
-                          <input id="rsvp_count_one" name="user[rsvp_count]" value="1" type="radio" checked="">
-                          <label for="rsvp_count_one" onclick="" class="label-rsvp"><i class="icon-male"></i></label>
-                          <input id="rsvp_count_two" name="user[rsvp_count]" value="2" type="radio">
-                          <label for="rsvp_count_two" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i></label>
-                          <input id="rsvp_count_three" name="user[rsvp_count]" value="3" type="radio">
-                          <label for="rsvp_count_three" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i><i class="icon-male"></i></label>
-                          <input id="rsvp_count_four" name="user[rsvp_count]" value="4" type="radio">
-                          <label for="rsvp_count_four" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i><i class="icon-male"></i><i class="icon-female"></i></label>
-                          <span class="slide-button btn btn-success"></span>
-                        </div><!-- /btn-switch -->
-                    </div><!-- /col -->
-                    <%= f.button :submit, 'Update', :class => 'btn-inverse pull-right' %>
-                  </div><!-- /form-group -->
+                <div class="form-group">
+                  <div class="col-lg-10">
+                    <div class="btn switch switch-three">
+                      <input id="rsvp_confirmation_unsure" name="user[rsvp_confirmation]" value="2" type="radio" checked="">
+                      <label for="rsvp_confirmation_unsure" onclick="" class="label-rsvp">Undecided</label>
+                      <input id="rsvp_confirmation_attending" name="user[rsvp_confirmation]" value="1" type="radio">                        <label for="rsvp_confirmation_attending" onclick="" class="label-rsvp">Attending</label>
+                      <input id="rsvp_confirmation_not_attending" name="user[rsvp_confirmation]" value="0" type="radio">
+                      <label for="rsvp_confirmation_not_attending" onclick="" class="label-rsvp">Not Attending</label>
+                      <span class="slide-button btn btn-success"></span>
+                    </div><!-- /btn-switch -->
+                    </br>
+                    <div class="btn switch switch-four" id="number_attending" style="display:none;">      
+                      <input id="rsvp_count_one" name="user[rsvp_count]" value="1" type="radio" checked="">
+                      <label for="rsvp_count_one" onclick="" class="label-rsvp"><i class="icon-male"></i></label>
+                      <input id="rsvp_count_two" name="user[rsvp_count]" value="2" type="radio">
+                      <label for="rsvp_count_two" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i></label>
+                      <input id="rsvp_count_three" name="user[rsvp_count]" value="3" type="radio">
+                      <label for="rsvp_count_three" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i><i class="icon-male"></i></label>
+                      <input id="rsvp_count_four" name="user[rsvp_count]" value="4" type="radio">
+                      <label for="rsvp_count_four" onclick="" class="label-rsvp"><i class="icon-male"></i><i class="icon-female"></i><i class="icon-male"></i><i class="icon-female"></i></label>
+                      <span class="slide-button btn btn-success"></span>
+                    </div><!-- /btn-switch -->
+                  </div><!-- /col -->
+                  <%= f.button :submit, 'Update', :class => 'btn-inverse pull-right' %>
+                </div><!-- /form-group -->
                 <% end %><!-- /simple-form -->
-                <% else %><!-- /not_confirmed? -->                 
-                  <div class="span12 visible-desktop">
-                    <div class="control-group">
-                      <div class ="flip">
-                        <div class="card"> 
-                          <div class="face front"> 
-                          </div> 
-                          <div class="popin face back"> 
-                          </div> 
-                        </div>
-                      </div> 
-                    </div><!-- /control-group -->
-                  </div><!-- /span -->
-                </div>
-                    <script>
-                    $(document).ready(function(){
-                        $('.flip').click(function(){
-                        $(this).find('.card').addClass('flipped').mouseleave(function(){
-                            $(this).removeClass('flipped');
-                        });
-                        return false;
-                        });
+              <% end %>
+              <% if current_user.rsvp_confirmation == 0 %>
+                <h5><%= current_user.first_name %>, you have regretfully declined and we will miss celebrating with you!</h5>
+              <% end %>
+              <% if current_user.rsvp_confirmation == 1 %> 
+                <div class"span12">
+                  <h5><%= current_user.first_name %>, we are thrilled that your party of <%= current_user.rsvp_count %> will be celebrating with us!</h5>
+                </div>                
+                <div class="span12 visible-desktop">
+                </br>
+                  <div class="control-group">
+                    <div class ="flip">
+                      <div class="card"> 
+                        <div class="face front"></div>  
+                        <div class="popin face back"></div> 
+                      </div><!-- /card -->
+                    </div><!-- /flip -->
+                  </div><!-- /control-group -->
+                </div><!-- /span12 -->
+              </div><!-- /span8 -->
+              <script>
+                $(document).ready(function(){
+                  $('.flip').click(function(){
+                  $(this).find('.card').addClass('flipped').mouseleave(function(){
+                  $(this).removeClass('flipped');
                     });
-                    </script>
-                <% end %><!-- /not_confirmed? -->
-            </div><!-- /row-fluid --> 
+                  return false;
+                  });
+                });
+              </script>
+              <% end %><!-- /attending -->
+            </div><!-- /row-fluid -->
           </div><!-- /container-fluid -->     
         </section>
         <section class="section" id="section4" data-section="3">
@@ -147,13 +153,13 @@
             <div class="row-fluid">
               <div class="span4">
                 <h2>Info</h2>
-              </div><!-- /span3 -->
+              </div><!-- /span4 -->
             </div><!-- /row-fluid -->
             <div class="row-fluid content">
             </br>
-                <div class="popin">
-                  <div id="map"></div>
-                </div>
+              <div class="popin">
+                <div id="map"></div>
+              </div>
             </div><!-- /row-fluid -->
             <div class="row-fluid content">
               <div class="span4">
@@ -168,22 +174,21 @@
                     <li data-blog="reception" class=""><i class="icon-circle-arrow-right"></i>Reception</li>
                     <li data-blog="hotels" class=""><i class="icon-circle-arrow-right"></i>Hotels</li>
                   <% end %>      
-                      </ul>
+                </ul>
               </div><!-- /span4 -->
               <% if current_user.has_role? :moderator %>
               <div class="span8 slide current" data-blog="rehearsal" style="display: block; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Location</h4>
-                    <p>The Rehearsal Dinner will be located at The Fish Market Restaurant in downtown Birmingham.<p>
-      
+                    <p>The Rehearsal Dinner will take place at The Fish Market Restaurant in downtown Birmingham.</p>
                     <p>The Fish Market Restaurant<br>612 22nd Street South<br>Birmingham, AL 35233<br>(205) 322-3330</p>
                     <div class="pull-right read-more">
                       <a href="http://thefishmarket.net" rel="external">Visit &nbsp;<i class="icon-share-alt"></i></a>
                     </div>
                   </div><!-- /span6 -->
                   <div class="span6 visible-desktop">
-                    <IMG class="displayed" src="http://i.imgur.com/ZzbvZA6.png" alt="The Fish Market | Birmingham">
+                    <IMG class="displayed" src="http://i.imgur.com/ZzbvZA6.png" alt="The Fish Market | Birmingham"></IMG>
                   </div><!-- /span6 -->
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
@@ -191,43 +196,39 @@
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Wedding</h4>
-                    <p>The Wedding Ceremony will be located at Covenant Presbyterian Church in <br>Homewood.<p>
-      
+                    <p>The Wedding Ceremony will take place at Covenant Presbyterian Church in <br>Homewood.</p>      
                     <p>Covenant Presbyterian Church<br> 65 Old Montgomery Hwy<br>Birmingham, AL 35209<br>(205) 871-7002</p>
                     <div class="pull-right read-more">
                       <a href="http://www.covpres.com" rel="external">Visit &nbsp;<i class="icon-share-alt"></i></a>
                     </div>
                   </div><!-- /span6 -->
                   <div class="span6 visible-desktop">
-                    <IMG class="displayed" src="http://www.covenantpalmbay.org/Images/Content/1000000183/1000166022.png" alt="Covenant Presbyterian | Birmingham">
+                    <IMG class="displayed" src="http://www.covenantpalmbay.org/Images/Content/1000000183/1000166022.png" alt="Covenant Presbyterian | Birmingham"></IMG>
                   </div><!-- /span6 -->
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
-              
               <div class="span8 slide" data-blog="reception" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Reception</h4>
-                    <p>The Wedding Reception will be located at The Wine Loft in downtown <br> Birmingham.<p>
-      
+                    <p>The Wedding Reception will take place at The Wine Loft in downtown <br> Birmingham.</p>
                     <p>The Wine Loft<br>2200 1st Ave N<br>Birmingham, AL 35203<br>(205) 323-8228</p>
                     <div class="pull-right read-more">
                       <a href="http://wineloftbham.com" rel="external">Visit &nbsp;<i class="icon-share-alt"></i></a>
                     </div>
                   </div><!-- /span6 -->
                   <div class="span6 visible-desktop">
-                    <IMG class="displayed" src="http://imgur.com/LShiFgS.jpg" alt="The Wine Loft | Birmingham"> 
+                    <IMG class="displayed" src="http://imgur.com/LShiFgS.jpg" alt="The Wine Loft | Birmingham"></IMG> 
                   </div><!-- /span6 -->
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
-              
               <div class="span8 slide" data-blog="hotels" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Courtyard Mariott</h4>
                     <p>The Courtyard Mariott is loacated off of Highway 31 and is a short drive to Covenant Presbyterian.</p>
                     <p>Sooter-Cink Wedding Price: $89/night</p>
-                    <IMG class="displayed" src="http://i0.wp.com/www.logoeps.com/wp-content/uploads/2013/01/courtyard-marriott-logo-vector.png?resize=400%2C400" width="100px" height="100px" alt="Courtyard Mariott"> 
+                    <IMG class="displayed" src="http://i0.wp.com/www.logoeps.com/wp-content/uploads/2013/01/courtyard-marriott-logo-vector.png?resize=400%2C400" width="100px" height="100px" alt="Courtyard Mariott"></IMG> 
                     <div class="pull-right read-more">
                       <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cink/Sooter%20Wedding%5EBHMHW%60CSWCSWA%7CCSWCSWB%6089.00%60USD%60false%601/9/14%601/13/14%6012/20/13&app=resvlink&stop_mobi=yes" rel="external">Book It &nbsp;<i class="icon-tags"></i></a>
                     </div>
@@ -237,11 +238,11 @@
                     <p>Aloft is located in downtown Homewood and is a short drive to Covenant Presbyterian and to Downotown Birmingham</p>
                     <p>Sooter-Cink Wedding Price: $119/night</p>
                   </br>
-                    <IMG class="displayed" src="http://i.imgur.com/3yeO6Lv.png" width="100px" height="100px" alt="Aloft Soho Square"> 
+                    <IMG class="displayed" src="http://i.imgur.com/3yeO6Lv.png" width="100px" height="100px" alt="Aloft Soho Square"></IMG> 
                     <div class="pull-right read-more">
                     </br>
                       <a href="https://www.starwoodmeeting.com/Book/sootercink" rel="external">Book It &nbsp;<i class="icon-tags"></i></a>
-                    </div>
+                    </div><!--/pull-right -->
                   </div><!-- /span6 -->
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
@@ -250,53 +251,49 @@
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Wedding</h4>
-                    <p>The Wedding Ceremony will be located at Covenant Presbyterian Church in <br>Homewood.<p>
-      
+                    <p>The Wedding Ceremony will take place at Covenant Presbyterian Church in <br>Homewood.</p>
                     <p>Covenant Presbyterian Church<br> 65 Old Montgomery Hwy<br>Birmingham, AL 35209<br>(205) 871-7002</p>
                     <div class="pull-right read-more">
                       <a href="http://www.covpres.com" rel="external">Visit &nbsp;<i class="icon-share-alt"></i></a>
-                    </div>
+                    </div><!--/pull-right -->
                   </div><!-- /span6 -->
                   <div class="span6 visible-desktop">
-                    <IMG class="displayed" src="http://www.covenantpalmbay.org/Images/Content/1000000183/1000166022.png" alt="Covenant Presbyterian | Birmingham">
+                    <IMG class="displayed" src="http://www.covenantpalmbay.org/Images/Content/1000000183/1000166022.png" alt="Covenant Presbyterian | Birmingham"></IMG>
                   </div><!-- /span6 -->
                 </div><!-- /row-fluid -->
-              </div><!-- /span8 -->
-              
+              </div><!-- /span8 -->              
               <div class="span8 slide" data-blog="reception" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Reception</h4>
-                    <p>The Wedding Reception will be located at The Wine Loft in downtown <br> Birmingham.<p>
-      
+                    <p>The Wedding Reception will take place at The Wine Loft in downtown <br> Birmingham.</p>
                     <p>The Wine Loft<br>2200 1st Ave N<br>Birmingham, AL 35203<br>(205) 323-8228</p>
                     <div class="pull-right read-more">
                       <a href="http://wineloftbham.com" rel="external">Visit &nbsp;<i class="icon-share-alt"></i></a>
                     </div>
                   </div><!-- /span6 -->
                   <div class="span6 visible-desktop">
-                    <IMG class="displayed" src="http://imgur.com/LShiFgS.jpg" alt="The Wine Loft | Birmingham"> 
+                    <IMG class="displayed" src="http://imgur.com/LShiFgS.jpg" alt="The Wine Loft | Birmingham"></IMG> 
                   </div><!-- /span6 -->
                 </div><!-- /row-fluid -->
-              </div><!-- /span8 -->
-              
+              </div><!-- /span8 -->          
               <div class="span8 slide" data-blog="hotels" style="display: none; ">
                 <div class="row-fluid">
                   <div class="span6 expand">
                     <h4>Courtyard Mariott</h4>
                     <p>The Courtyard Mariott is loacated off of Highway 31 and is a short drive to Covenant Presbyterian.</p>
                     <p>Sooter-Cink Wedding Price: $89/night</p>
-                    <IMG class="displayed" src="http://i0.wp.com/www.logoeps.com/wp-content/uploads/2013/01/courtyard-marriott-logo-vector.png?resize=400%2C400" width="100px" height="100px" alt="Courtyard Mariott"> 
+                    <IMG class="displayed" src="http://i0.wp.com/www.logoeps.com/wp-content/uploads/2013/01/courtyard-marriott-logo-vector.png?resize=400%2C400" width="100px" height="100px" alt="Courtyard Mariott"></IMG> 
                     <div class="pull-right read-more">
                       <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Cink/Sooter%20Wedding%5EBHMHW%60CSWCSWA%7CCSWCSWB%6089.00%60USD%60false%601/9/14%601/13/14%6012/20/13&app=resvlink&stop_mobi=yes" rel="external">Book It &nbsp;<i class="icon-tags"></i></a>
-                    </div>
+                    </div><!--/pull-right -->
                   </div><!-- /span6 -->
                   <div class="span6 visible-desktop">
                     <h4>Aloft Soho Square</h4>
                     <p>Aloft is located in downtown Homewood and is a short drive to Covenant Presbyterian and to Downotown Birmingham</p>
                     <p>Sooter-Cink Wedding Price: $119/night</p>
-                  </br>
-                    <IMG class="displayed" src="http://i.imgur.com/3yeO6Lv.png" width="100px" height="100px" alt="Aloft Soho Square"> 
+                    </br>
+                    <IMG class="displayed" src="http://i.imgur.com/3yeO6Lv.png" width="100px" height="100px" alt="Aloft Soho Square"></IMG> 
                     <div class="pull-right read-more">
                     </br>
                       <a href="https://www.starwoodmeeting.com/Book/sootercink" rel="external">Book It &nbsp;<i class="icon-tags"></i></a>
@@ -305,8 +302,8 @@
                 </div><!-- /row-fluid -->
               </div><!-- /span8 -->
               <% end %>
-            </div>
-            <div><!-- /container -->
+            </div><!--/row-fluid-content -->
+          </div><!-- /container -->
         </section> 
         <section class="section" id="section5" data-section="4">
           <div class="container-fluid">
@@ -319,79 +316,75 @@
               <div class="span8">
                 <div class="row-fluid alt">
                   <h5><i class="icon-instagram icon-3x"></i></h5>
-                  <span>#sooter-cink-wedding</span>
+                  <span>#sootercinkwedding</span>
                 </div>
                 </br></br>
-                <div class="span8">
                   <div class="row-fluid">
                     <div class="popin-instaslider" id="instafeed"></div>
                    <div class="controls">
-                    <div class="prev entypo-left-open-big"></div>
-                    <div class="next entypo-right-open-big"></div>
+                    <div class="prev-instafeed entypo-left-open-big"></div>
+                    <div class="next-instafeed entypo-right-open-big"></div>
                     <script src="https://raw.github.com/stevenschobert/instafeed.js/master/instafeed.min.js"></script>
                     <!-- Grab My Latest Instagram Photo -->
                     <script type="text/javascript">
+                      feed = new Instafeed({
+                         get: 'tagged',
+                              clientId: '791b688830374d95a18d08422d8c096e',
+                              tagName: 'sootercinkwedding',
+                              sortby: 'random',
+                              resolution: 'standard_resolution',
+                              links: 'false',
+                              limit: '20',
+                              template: '<div id="caption" class="visible-desktop">{{caption}} <br>{{likes}} likes <i class="icon-heart"></i></div><div id="bg"><img src="{{image}}" /></div>',
+                        mock: true,
+                        custom: {
+                          images: [],
+                          currentImage: 0,
+                          showImage: function () {
+                            var result, image;
+                            image = this.options.custom.images[this.options.custom.currentImage];
+                            result = this._makeTemplate(this.options.template, {
+                              model: image,
+                              id: image.id,
+                              link: image.link,
+                              image: image.images[this.options.resolution].url,
+                              caption: this._getObjectProperty(image, 'caption.text'),
+                              likes: image.likes.count,
+                              comments: image.comments.count,
+                              location: this._getObjectProperty(image, 'location.name')
+                            });
+                            $("#instafeed").html(result);
+                          }
+                        },
+                        success: function (data) {
+                          this.options.custom.images = data.data; 
+                          this.options.custom.showImage.call(this);
+                        }
+                      });
+                      feed.run();
 
+                      $(".next-instafeed").click(function () {
+                        var length, current;
+                        current = feed.options.custom.currentImage;
+                        length = feed.options.custom.images.length;
+                        if (current < length - 1) {
+                          feed.options.custom.currentImage++;
+                          feed.options.custom.showImage.call(feed);
+                        }
+                      });
 
-                  feed = new Instafeed({
-                     get: 'tagged',
-                          clientId: '791b688830374d95a18d08422d8c096e',
-                          tagName: 'wareagle',
-                          sortby: 'random',
-                          resolution: 'standard_resolution',
-                          links: 'false',
-                          limit: '20',
-                          template: '<div id="caption">{{caption}} <br>{{likes}} likes <i class="icon-heart"></i></div><div id="bg"><img src="{{image}}" /></div>',
-                    mock: true,
-                    custom: {
-                      images: [],
-                      currentImage: 0,
-                      showImage: function () {
-                        var result, image;
-                        image = this.options.custom.images[this.options.custom.currentImage];
-                        result = this._makeTemplate(this.options.template, {
-                          model: image,
-                          id: image.id,
-                          link: image.link,
-                          image: image.images[this.options.resolution].url,
-                          caption: this._getObjectProperty(image, 'caption.text'),
-                          likes: image.likes.count,
-                          comments: image.comments.count,
-                          location: this._getObjectProperty(image, 'location.name')
-                        });
-                        $("#instafeed").html(result);
-                      }
-                    },
-                    success: function (data) {
-                      this.options.custom.images = data.data; 
-                      this.options.custom.showImage.call(this);
-                    }
-                  });
-                  feed.run();
-
-                  $(".next").click(function () {
-                    var length, current;
-                    current = feed.options.custom.currentImage;
-                    length = feed.options.custom.images.length;
-                    if (current < length - 1) {
-                      feed.options.custom.currentImage++;
-                      feed.options.custom.showImage.call(feed);
-                    }
-                  });
-
-                  $(".prev").click(function () {
-                    var length, current;
-                    current = feed.options.custom.currentImage;
-                    length = feed.options.custom.images.length;
-                    if (current > 0) {
-                      feed.options.custom.currentImage--
-                      feed.options.custom.showImage.call(feed);
-                    }
-                  });
+                      $(".prev-instafeed").click(function () {
+                        var length, current;
+                        current = feed.options.custom.currentImage;
+                        length = feed.options.custom.images.length;
+                        if (current > 0) {
+                          feed.options.custom.currentImage--
+                          feed.options.custom.showImage.call(feed);
+                        }
+                      });
                     </script>
-                    </div><!-- /controls -->
-                  </div><!-- /row-fluid -->
-                </div><!-- /span8-desktop -->
+                  </div><!-- /controls -->
+                </div><!-- /row-fluid -->
               </div><!-- /span8 -->
             </div><!-- /row -->
           </div><!-- /container -->
@@ -405,97 +398,168 @@
             </div><!-- /row-fluid -->
             <div class="row-fluid desc">
               <div class="span8">
-                  <p>Are you considering showing your love and support of us during this special occasion through a wedding gift? We've got all the pots and pans we need! Between college (Grace Ann) and high school (Brad), we've been blessed with the opportunities to go on mission trips to Central America. Please defer all of your kindness to our friends in Guatemala and Mexico on behalf of us!</p>
-                  <button class="btn-inverse donate"><a href="#donate-form"></a>Give a gift</button>
-
-                  <div id="donate-form" style="display:none;" class="simple-form">
-                  </br>
-                    <div id="amount-form" style="display:block;">
-                      <h3>Step 1.</h3>
-                      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :remote => true, :html => { :method => :put, :class => 'form-vertical', :id => 'donation' }) do |f| %>
-                        <%= f.input :donation_amount, :id => 'donate-amount' %>
-                        <%= f.button :submit, 'Next', :class => 'btn-inverse', :id =>"next-button" %>
-                      <% end %>
-                    </div>
-                    <div id="submit-payment-prep" style="display:none;">
-                      <h3>Step 2.</h3>
-                      <h5>Your wedding gift amount: $<%= current_user.donation_amount %></h5>
-                      <button class="btn-inverse" id="back-button">Go Back</button>
-                      <button class="btn-inverse" id="customButton">Pay With Card</button>
-                        <%= form_tag charges_path do %>
-                            <script>
-                              $('#customButton').click(function(){
-                                var amount = "<%= current_user.donation_amount %>"
-                                var token = function(res){
-                                  var $input = $('<input type=hidden name=stripeToken />').val(res.id);
-                                  $('form').append($input).submit();
-                                };
-
-                                StripeCheckout.open({
-                                  key:         "<%= Rails.configuration.stripe[:publishable_key] %>",
-                                  address:     true,
-                                  amount:      amount*100,
-                                  currency:    'usd',
-                                  name:        'Sooter-Cink',
-                                  description: 'Wedding Gift',
-                                  panelLabel:  'Donate:',
-                                  token:       token
-                                });
-
-                                return false;
-                              });
-                          </script>
-                        <% end %>
-                      </div><!-- /submit-payment-prep -->
-                  </div><!-- /donate-form -->
-              </div><!-- /span8 -->
+                <p>Are you considering showing your love and support of us during this special occasion through a wedding gift? We've got all the pots and pans we need! Between college (Grace Ann) and high school (Brad), we've been blessed with the opportunities to go on mission trips to Central America. Please defer all of your kindness to our friends in Guatemala and Mexico on behalf of us!</p>
+                <button class="btn-inverse donate"><a href="#donate-form"></a>Give a gift</button>
+                <div id="donate-form" style="display:none;" class="simple-form">
+                </br>
+                <div id="amount-form" style="display:block;">
+                  <h3>Step 1.</h3>
+                    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :remote => true, :html => { :method => :put, :class => 'form-vertical', :id => 'donation' }) do |f| %>
+                      <%= f.input :donation_amount, :id => 'donate-amount' %>
+                      <%= f.button :submit, 'Next', :class => 'btn-inverse', :id =>"next-button" %>
+                    <% end %>
+                </div>
+                <div id="submit-payment-prep" style="display:none;">
+                  <h3>Step 2.</h3>
+                  <h5>Your wedding gift amount: $<%= current_user.donation_amount %></h5>
+                  <button class="btn-inverse" id="back-button">Go Back</button>
+                  <button class="btn-inverse" id="customButton">Pay With Card</button>
+                  <%= form_tag charges_path do %>
+                    <script>
+                      $('#customButton').click(function(){
+                        var amount = "<%= current_user.donation_amount %>"
+                        var token = function(res){
+                        var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+                        $('form').append($input).submit();
+                        };
+                        StripeCheckout.open({
+                        key:         "<%= Rails.configuration.stripe[:publishable_key] %>",
+                        address:     true,
+                        amount:      amount*100,
+                        currency:    'usd',
+                        name:        'Sooter-Cink',
+                        description: 'Wedding Gift',
+                        panelLabel:  'Donate:',
+                        token:       token
+                        });
+                        return false;
+                       });
+                    </script>
+                  <% end %>
+                </div><!-- /submit-payment-prep -->
+              </div><!-- /donate-form -->
+            </div><!-- /span8 -->
           </div><!-- /row-fluid -->
-            <div class="row-fluid content">
-              <div class="span4">
-                <ul class="ss-mission-photo">
-                  <li data-blog="grace-ann" class="ss-circle-photo ss-circle-mission-grace-ann"></li>
-                  <li data-blog="brad" class="ss-circle-photo ss-circle-mission-brad"></li>                        
-                </ul>
-              </div><!-- /span4 -->
-              
-              <div class="span8 slide current" data-blog="grace-ann">
-                <div class="row-fluid">
-                  <div class="span6 expand">
-                    <h4>Guatemala</h4>
-                    <p>'This was a great trip'</p>
-                  </div><!-- /span6 -->
-                  <div class="span6 visible-desktop">
-                    <h4></h4>
-                    <p>'I loved it!'</p>
-                  </div><!-- /span6 -->
-                  
-                </div><!-- /row-fluid -->
-              </div><!-- /span8 -->
-              
-              <div class="span8 slide" data-blog="brad">
-                <div class="row-fluid">
-                  <div class="span6 expand">
-                    <h4>Mexico</h4>
-                    <p>'Akil is the best'</p>
-                  </div><!-- /span6 -->
-                  <div class="span6 visible-desktop">
-                    <h4></h4>
-                    <p>There were a lot of neat things to do!</p>
-                  </div><!-- /span6 -->
-                </div><!-- /row-fluid -->
-              </div><!-- /span8 -->
+          <div class="row-fluid content">
+            <div class="span4">
+              <ul class="ss-mission-photo">
+                <li data-blog="grace-ann" class="ss-circle-photo ss-circle-mission-grace-ann"></li>
+                <li data-blog="brad" class="ss-circle-photo ss-circle-mission-brad"></li>                        
+              </ul>
+            </div><!-- /span4 -->  
+            <div class="span8 slide current" data-blog="grace-ann">
+              <div class="row-fluid">
+                <div class="span6 expand">
+                  <h4>Guatemala</h4>
+                  <div class="DivToScroll">
+                    <div class="DivWithScroll">My pastor often reminds my church that giving 2% of our year to make the gospel known in another context radically transforms the other 98% of our lives in our own context. Even a year and a half later, I am still finding this to be true. God made His provision, sovereignty, and grace very evident in every part of the trip I took with One Way Ministries to Guatemala. We spent our mornings alongside the faith family of New Jerusalem, Guatemala, the local church, and in grade schools leading vacation bible school for children whose homes were filled with  impoverty, domestic violence, and the like. In the afternoons, we traveled to the rural city of Sacajvela alongside women from New Jerusalem into the homes of families who had been estranged from the church, needed encouragement in the midst of tragedy, or were simply ready to hear the gospel. The people that I grew to know both on my team and in Guatemala greatly moved me and served as a catalyst for Brad and I deciding to ask you to shift your generosity towards One Way and The Mobile Archdiocesan Mexico Mission Trip. Your financial giving will support childcare to enable single parents to work, medical needs, and even basic needs to a Guatemalan community that would appreciate your sacrifice more than we could ever appreciate a gift. To learn more about One Way, visit http://www.1wayministries.org or contact me. “May God be gracious to us and bless usand make his face shine upon us, that your ways may be known on the earth, your salvation among all nations.” –Psalm 67:1-2</div>
+                  </div>
+                </div><!-- /span6 -->
+                <div class="span6 visible-desktop">
+                  <h4></h4>
+                  <div class="popin-lean">
+                    <div id="slideshow">
+                      <img src="assets/Guatemala1.jpeg" alt="" class="active" />
+                      <img src="assets/Guatemala2.jpeg" alt="" />
+                      <img src="assets/Guatemala3.jpeg" alt="" />
+                      <img src="assets/Guatemala4.jpeg" alt="" />
+                    </div>
+                  </div>
+                </div><!-- /span6 -->                  
+              </div><!-- /row-fluid -->
+            </div><!-- /span8 -->  
+            <div class="span8 slide" data-blog="brad">
+              <div class="row-fluid">
+                <div class="span6 expand">
+                  <h4>Mexico</h4>
+                  <div class="DivToScroll">
+                    <div class="DivWithScroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed congue arcu, eu pretium est. Sed gravida turpis massa, id porttitor metus scelerisque sit amet. Donec id turpis nibh. Proin pharetra sollicitudin urna, et iaculis metus. Morbi pellentesque dui et dolor consectetur, vel volutpat sem consequat. Nullam sagittis lacus in gravida pretium. Nulla enim est, porttitor et nisl eu, tristique dignissim purus. Aliquam pharetra dolor nibh, nec cursus dui tincidunt eget. Praesent auctor sed elit vitae elementum. Curabitur vitae lacus blandit, luctus dui non, facilisis ante. Praesent a nisi molestie, hendrerit eros vitae, tempor turpis. Pellentesque mollis sapien sapien, sed dictum enim ornare quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ullamcorper, sapien et consectetur ullamcorper, felis lorem scelerisque purus, ut volutpat est ante eu metus. Cras et ultrices lacus, ut adipiscing lacus. Maecenas tincidunt tempus lectus, eget venenatis massa condimentum at.</div>
+                  </div>
+                </div><!-- /span6 -->
+                <div class="span6 visible-desktop">
+                  <h4></h4>
+                  <div class="popin-lean">
+                    <div id="slideshow">
+                      <img src="assets/Guatemala1.jpeg" alt="" class="active" />
+                      <img src="assets/Guatemala2.jpeg" alt="" />
+                      <img src="assets/Guatemala3.jpeg" alt="" />
+                      <img src="assets/Guatemala4.jpeg" alt="" />
+                    </div>
+                  </div>
+                </div><!-- /span6 -->                  
+              </div><!-- /row-fluid -->
+            </div><!-- /span8 -->
+          </div><!-- /row-fluid content-->
+        </div><!-- /container -->
+      </section>
+      <section class="section" id="section5" data-section="6">
+        <div class="container-fluid">
+          <div class="row-fluid title">
+            <div class="span4">
+              <h2>Wedding Party</h2>
+            </div><!-- /span4 -->
+          </div><!-- /row-fluid -->
+          <div class="row-fluid content">
+            <div id="myCarousel" class="carousel slide">
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item" id="Rachael">
+                    <img src="assets/Rachael.jpg" />
+                </div>
+                <div class="item" id="Jesslyn">
+                    <img src="assets/Jesslyn.jpg" />
+                </div>
+                <div class="item" id="Lydia">
+                    <img src="assets/Lydia.jpg" />
+                </div>
+                <div class="item" id="Hannah">
+                    <img src="assets/Hannah.jpg" />
+                </div>
+                <div class="active item" id="Grace Ann">
+                    <img src="assets/GraceAnn.jpg" />
+                </div>
+                <div class="item" id="Brad">
+                    <img src="assets/Brad.jpg" />
+                </div>
+                <div class="item" id="Austin">
+                    <img src="http://imgur.com/7OeRty1.jpg" />
+                </div>
+                <div class="item" id="Mark">
+                    <img src="http://imgur.com/lhz8zmQ.jpg" />
+                </div>
+                <div class="item" id="Richard">
+                    <img src="http://i.imgur.com/3ZIRZan.jpg" />
+                </div>
+                <div class="item" id="Luke">
+                    <img src="http://imgur.com/B8rJDs8.jpg" />
+                </div>
+                <div class="item" id="Wise">
+                    <img src="http://imgur.com/RMFJu49.jpg" />
+                </div>
+              </div><!-- carousel-inner -->
+              <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>            
+              <!-- LINKED NAV -->
+              <!-- <ol class="carousel-linked-nav pagination">
+                <li class="active"><a href="#1">1</a></li>
+                <li><a href="#2">2</a></li>
+                <li><a href="#3">3</a></li>
+                <li><a href="#4">4</a></li>
+                <li><a href="#5">5</a></li>
+              </ol> -->
             </div>
         </div><!-- /container -->
       </section>
-        <%=render"layouts/timeline"%>
-    </div>
-  </div>
-    <!-- JAVASCRIPTS -->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    <script type="text/javascript" src="http://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
-    <script src="https://checkout.stripe.com/v2/checkout.js"></script>
-    
-    <script>
+      <%=render"layouts/timeline"%>
+    </div><!-- /container -->
+  </div><!-- /wrapper -->
+  <!-- JAVASCRIPTS -->
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <script type="text/javascript" src="http://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
+  <script src="https://checkout.stripe.com/v2/checkout.js"></script>
+  <script>
     var map;
     $(document).ready(function(){
       map = new GMaps({
@@ -570,6 +634,47 @@
             console.log(e);
         }
       });
+
+      // invoke the carousel
+$('#myCarousel').carousel({
+  interval: 3000
+});
+
+/* SLIDE ON CLICK */ 
+
+$('.carousel-linked-nav > li > a').click(function() {
+
+    // grab href, remove pound sign, convert to number
+    var item = Number($(this).attr('href').substring(1));
+
+    // slide to number -1 (account for zero indexing)
+    $('#myCarousel').carousel(item - 1);
+
+    // remove current active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+    // add active class to just clicked on item
+    $(this).parent().addClass('active');
+
+    // don't follow the link
+    return false;
+});
+
+/* AUTOPLAY NAV HIGHLIGHT */
+
+// bind 'slid' function
+$('#myCarousel').bind('slid', function() {
+
+    // remove active class
+    $('.carousel-linked-nav .active').removeClass('active');
+
+    // get index of currently active item
+    var idx = $('#myCarousel .item.active').index();
+
+    // select currently active item and add active class
+    $('.carousel-linked-nav li:eq(' + idx + ')').addClass('active');
+
+});
 
       // Slide Toggles
     
@@ -745,6 +850,5 @@
     });
 
     
-</script>
-
-  </body>
+  </script>
+</body>
