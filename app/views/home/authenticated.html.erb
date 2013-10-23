@@ -411,7 +411,7 @@
                 </div>
                 <div id="submit-payment-prep" style="display:none;">
                   <h3>Step 2.</h3>
-                  <h5>Your wedding gift amount: $<%= current_user.donation_amount %></h5>
+                  <h5></h5>
                   <button class="btn-inverse" id="back-button">Go Back</button>
                   <button class="btn-inverse" id="customButton">Pay With Card</button>
                   <%= form_tag charges_path do %>
@@ -479,11 +479,15 @@
                 <div class="span6 visible-desktop">
                   <h4></h4>
                   <div class="popin-lean">
-                    <div id="slideshow">
-                      <img src="assets/Guatemala1.jpeg" alt="" class="active" />
-                      <img src="assets/Guatemala2.jpeg" alt="" />
-                      <img src="assets/Guatemala3.jpeg" alt="" />
-                      <img src="assets/Guatemala4.jpeg" alt="" />
+                    <div id="slideshow2">
+                      <img src="assets/Mexico1.jpg" alt="" class="active" />
+                      <img src="assets/Mexico2.jpg" alt="" />
+                      <img src="assets/Mexico3.jpg" alt="" />
+                      <img src="assets/Mexico4.jpg" alt="" />
+                      <img src="assets/Mexico5.jpg" alt="" />
+                      <img src="assets/Mexico6.jpg" alt="" />
+                      <img src="assets/Mexico7.jpg" alt="" />
+                      <img src="assets/Mexico8.jpg" alt="" />
                     </div>
                   </div>
                 </div><!-- /span6 -->                  
@@ -800,6 +804,8 @@ $('#myCarousel').bind('slid', function() {
         var datasection = $(this).attr('data-section');
         goToByScroll(datasection);
     });
+
+  
   
     // Snap to scroll (optional)
     
