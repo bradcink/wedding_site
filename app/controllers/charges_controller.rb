@@ -4,19 +4,26 @@ class ChargesController < ApplicationController
 
 	def create
 	  # Amount in cents
-	  @amount =  @user.donation_amount
+	  @amount =  current_user.donation_amount*100
 
 	  customer = Stripe::Customer.create(
-	    :email => 'example@stripe.com',
+	    :email => current_user.email,
 	    :card  => params[:stripeToken]
 	  )
 
 	  charge = Stripe::Charge.create(
 	    :customer    => customer.id,
 	    :amount      => @amount,
-	    :description => 'Rails Stripe customer',
+	    :description => 'Sooter-Cink Wedding | Donor',
 	    :currency    => 'usd'
 	  )
+	respond_to do |format|
+	  if params[:action] == "create"
+	  	format.html { redirect_to root_path, notice: 'Thank you for your kind donation!' }
+	  else
+	  	format.html { redirect_to root_path, alert: 'Donation failed. Please try again.' }
+	  end
+	end
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message

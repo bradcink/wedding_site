@@ -404,36 +404,46 @@
                 </br>
                 <div id="amount-form" style="display:block;">
                   <h3>Step 1.</h3>
-                    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :remote => true, :html => { :method => :put, :class => 'form-vertical', :id => 'donation' }) do |f| %>
-                      <%= f.input :donation_amount, :id => 'donate-amount' %>
+                    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :remote => true, :html => { :method => :put, :class => 'form-vertical', :id => 'donation', :format => :json }) do |f| %>
+                      <%= f.input :donation_amount, :id => 'donate-amount', :input_html => { :data => :donation_amount} %>
                       <%= f.button :submit, 'Next', :class => 'btn-inverse', :id =>"next-button" %>
                     <% end %>
                 </div>
                 <div id="submit-payment-prep" style="display:none;">
                   <h3>Step 2.</h3>
-                  <h5></h5>
+                  <h6>Donation Amount: </h6><p class="result"></p>
                   <button class="btn-inverse" id="back-button">Go Back</button>
                   <button class="btn-inverse" id="customButton">Pay With Card</button>
                   <%= form_tag charges_path do %>
                     <script>
-                      $('#customButton').click(function(){
-                        var amount = "<%= current_user.donation_amount %>"
-                        var token = function(res){
-                        var $input = $('<input type=hidden name=stripeToken />').val(res.id);
-                        $('form').append($input).submit();
-                        };
-                        StripeCheckout.open({
-                        key:         "<%= Rails.configuration.stripe[:publishable_key] %>",
-                        address:     true,
-                        amount:      amount*100,
-                        currency:    'usd',
-                        name:        'Sooter-Cink',
-                        description: 'Wedding Gift',
-                        panelLabel:  'Donate:',
-                        token:       token
-                        });
-                        return false;
-                       });
+                    $(document).ready(function(){
+                    $('#next-button').click(function(){
+                      $("form#donation").bind("ajax:success", function( xhr, data, status) {     
+                      var serial = ($(this).serialize().split("=").pop());
+                      var amounts = $(".result").html(serial)//.prepend( "$" )
+                      ;
+                      });
+                    });
+                    $('#customButton').click(function(){
+                        var amount = parseInt($(".result").html(), 10);;
+                          var token = function(res){
+                          var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+                          $('form').append($input).submit();
+                          };
+                          StripeCheckout.open({
+                          key:         "<%= Rails.configuration.stripe[:publishable_key] %>",
+                          address:     true,
+                          amount:      amount*100,
+                          currency:    'usd',
+                          name:        'Sooter-Cink',
+                          description: 'Wedding Gift',
+                          panelLabel:  'Donate:',
+                          token:       token,
+                          image:       "http://i.imgur.com/0sSQC2X.jpg" 
+                          });
+                          return false;
+                      });
+                    });
                     </script>
                   <% end %>
                 </div><!-- /submit-payment-prep -->
