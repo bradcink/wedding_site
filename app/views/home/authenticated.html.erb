@@ -39,13 +39,11 @@
                 <h3>Sooter-Cink Wedding</br>January 11, 2014</h3>
               </hgroup>
             <div class="btn-group">
-              <a class="btn-inverse" href="#" data-toggle="dropdown"><i class="icon-circle-arrow-down"></i>User</a><span class="icon-caret-down"></span></a>
+              <a class="btn-inverse" href="#" data-toggle="dropdown"><i class="icon-circle-arrow-down"></i><%= current_user.first_name %></a></a>
                 <ul class="dropdown-menu">
-                  <li id="edit"><a href="#"><i class="icon-fixed-width icon-pencil"></i>&nbsp;Edit</a></li>
-                  <li id="faq"><a href="#"><i class="icon-fixed-width icon-question">&nbsp;</i>&nbsp;FAQ</a></li>
-                  <li class""><%= link_to '<i class="icon-user"></i><span>&nbsp;&nbsp;&nbsp;Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>
+                  <li id="edit"><a href="#"><i class="icon-fixed-width icon-pencil"></i>&nbsp;Edit Info</a></li>
                   <li class="divider"></li>
-                  <li><%= link_to '<i class="icon-fixed-width icon-trash"></i>&nbsp;Delete'.html_safe, registration_path(resource_name), :data => { :confirm => "You want to delete your Sooter-Cink wedding account?" }, :method => :delete %></li>
+                  <li class""><%= link_to '<i class="icon-user"></i><span>&nbsp;&nbsp;&nbsp;Sign Out</span>'.html_safe, destroy_user_session_path, :method=>'delete' %></li>
                 </ul><!-- /dropddown-menu -->
             </div><!-- /btn-group -->  
             </div><!-- /span4 -->
@@ -111,7 +109,7 @@
                       <span class="slide-button btn btn-success"></span>
                     </div><!-- /btn-switch -->
                   </div><!-- /col -->
-                  <%= f.button :submit, 'Update', :class => 'btn-inverse pull-right' %>
+                  <%= f.button :submit, 'Update', :class => 'btn-inverse-faq pull-right' %>
                 </div><!-- /form-group -->
                 <% end %><!-- /simple-form -->
               <% end %>
@@ -322,8 +320,8 @@
                   <div class="row-fluid">
                     <div class="popin-instaslider" id="instafeed"></div>
                    <div class="controls">
-                    <div class="prev-instafeed entypo-left-open-big"></div>
-                    <div class="next-instafeed entypo-right-open-big"></div>
+                    <a class="carousel-control left" id="prev-instafeed">&lsaquo;</a>
+                    <a class="carousel-control right" id="next-instafeed">&rsaquo;</a>
                     <script src="https://raw.github.com/stevenschobert/instafeed.js/master/instafeed.min.js"></script>
                     <!-- Grab My Latest Instagram Photo -->
                     <script type="text/javascript">
@@ -363,7 +361,7 @@
                       });
                       feed.run();
 
-                      $(".next-instafeed").click(function () {
+                      $("#next-instafeed").click(function () {
                         var length, current;
                         current = feed.options.custom.currentImage;
                         length = feed.options.custom.images.length;
@@ -373,7 +371,7 @@
                         }
                       });
 
-                      $(".prev-instafeed").click(function () {
+                      $("#prev-instafeed").click(function () {
                         var length, current;
                         current = feed.options.custom.currentImage;
                         length = feed.options.custom.images.length;
@@ -519,36 +517,92 @@
               <div class="carousel-inner">
                 <div class="item" id="Rachael">
                     <img src="assets/Rachael.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Rachael Benson</h4>
+                      <h5 align="center">Bridesmaid</h4>
+                      <h6 align="center">Sister of the Groom | ΑΧΩ Intramural Bench Warmer</h4>
+                    </div>
                 </div>
                 <div class="item" id="Jesslyn">
                     <img src="assets/Jesslyn.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Jesslyn Faught</h4>
+                      <h5 align="center">Bridesmaid</h4>
+                      <h6 align="center">Cousin of the Bride | Wise's Psychadelic Date</h4>
+                    </div>
                 </div>
                 <div class="item" id="Lydia">
                     <img src="assets/Lydia.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Lydia Sooter</h4>
+                      <h5 align="center">Maid of Honor</h4>
+                      <h6 align="center">Sister of the Bride | Self-acclaimed Wine Connoisseur</h4>
+                    </div>
                 </div>
                 <div class="item" id="Hannah">
                     <img src="assets/Hannah.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Hannah Dow</h4>
+                      <h5 align="center">Matron of Honor</h4>
+                      <h6 align="center">Sister of the Bride | Handmatron to the Duchess of Cambridge</h4>
+                     
+                    </div>
                 </div>
                 <div class="active item" id="Grace Ann">
                     <img src="assets/GraceAnn.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Grace Ann Sooter</h4>
+                      <h5 align="center">The Bride!</h4>
+                      <h6 align="center">Thought Braces Were Still Cool at 22</h4>
+                    </div>
                 </div>
                 <div class="item" id="Brad">
                     <img src="assets/Brad.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Brad Cink</h4>
+                      <h5 align="center">The Groom!</h4>
+                      <h6 align="center">Cell Phone Number Commonly Mistaken for 1-800-APPLE-CARE</h4>
+                    </div>
                 </div>
                 <div class="item" id="Austin">
                     <img src="http://imgur.com/7OeRty1.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Austin McMillan</h4>
+                      <h5 align="center">Best Man</h4>
+                      <h6 align="center">Pledge Brother of the Groom | 2A AHSAA Golf State Champ and Cattle Venture Capitalist</h4>
+                    </div>
                 </div>
                 <div class="item" id="Mark">
                     <img src="http://imgur.com/lhz8zmQ.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Mark Lawrence</h4>
+                      <h5 align="center">Groomsman</h4>
+                      <h6 align="center">High School Friend of the Groom | Oldest College Freshman and Lead Singer of the Ol' Dirty Pandas</h4>
+                    </div>
                 </div>
                 <div class="item" id="Richard">
                     <img src="http://i.imgur.com/3ZIRZan.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Richard Martin</h4>
+                      <h5 align="center">Groomsman</h4>
+                      <h6 align="center">High School Friend of the Groom | Most Likely to Take His Shirt Off and Ask, "Where's the gun show?"</h4>
+                    </div>
                 </div>
                 <div class="item" id="Luke">
-                    <img src="http://imgur.com/B8rJDs8.jpg" />
+                    <img src="assets/Luke.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Luke Jensen</h4>
+                      <h5 align="center">Groomsman</h4>
+                      <h6 align="center">College Roommate & Pledge Brother of the Groom | CEO of www.gogrizzlies.com</h4>
+                    </div>
                 </div>
                 <div class="item" id="Wise">
                     <img src="http://imgur.com/RMFJu49.jpg" />
+                    <div class="row-fluid content">
+                      <h4 align="center">Tyler Wise</h4>
+                      <h5 align="center">Groomsman</h4>
+                      <h6 align="center">Pledge Brother of the Groom | Tony Award Winner for the High School Rendition of 'Grease'</h4>
+                    </div>
                 </div>
               </div><!-- carousel-inner -->
               <!-- Carousel nav -->
@@ -578,8 +632,9 @@
     $(document).ready(function(){
       map = new GMaps({
         el: '#map',
-        lat: +33.463740,
-        lng: -86.781617
+        lat: +33.500501,
+        lng: -86.795726,
+        zoom: 12
       });
       map.addMarker({
         lat: +33.463740,

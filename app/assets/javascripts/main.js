@@ -1,4 +1,5 @@
 $(document).ready(function ($) {
+  $("html,body").css("overflow","auto");
   
     // Sidebar Toggle
     

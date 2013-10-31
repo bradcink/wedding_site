@@ -1,3 +1,5 @@
+/* Credits to http://tympanus.net/Tutorials/LateralOnScrollSliding/ for styling */
+
 h2.custom {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -125,24 +127,6 @@ h2.ss-subtitle:after{
 	transition: background 0.2s linear;
 }
 
-.ss-links a.custom-phone{
-	background: rgba(0,0,0,0.2);
-	font-size: 12px;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	margin: 5px;
-	float: left;
-	border-radius: 50%;
-	display: block;
-	text-align: center;
-	-webkit-transition: background 0.2s linear;
-	-moz-transition: background 0.2s linear;
-	-o-transition: background 0.2s linear;
-	-ms-transition: background 0.2s linear;
-	transition: background 0.2s linear;
-}
-
 .ss-links a:hover{
 	background: rgba(0,0,0,0.4);
 }
@@ -152,7 +136,7 @@ h2.ss-subtitle:after{
     text-align: left;
     float: left;
 	overflow: hidden;
-	padding-bottom: 500px;
+	padding-bottom: 0;
 }
 .ss-container h2{
     font-size: 26px;
@@ -202,7 +186,8 @@ h2.ss-subtitle:after{
 
 .ss-middle{
 	float: middle;
-	padding-left: 2%;
+	padding-left: 2d%;
+	position: relative;
 }
 
 .ss-circle-photo{
@@ -261,8 +246,8 @@ h2.ss-subtitle:after{
 
 
 .ss-small .ss-circle{
-	width: 100px;
-	height: 100px;
+	width: 75px;
+	height: 75px;
 }
 .ss-medium .ss-circle{
 	width: 200px;
@@ -392,50 +377,70 @@ h2.ss-subtitle:after{
     background-image: url(images/GA06.jpg);
 }
 .ss-circle-15{
-    background-image: url(../images/15.jpg);
+    background-image: url(images/BJC07.jpg);
 }
 .ss-circle-16{
-    background-image: url(../images/16.jpg);
+    background-image: url(images/BJC08.jpg);
 }
 .ss-circle-17{
-    background-image: url(../images/17.jpg);
+    background-image: url(images/GA07.jpg);
 }
 .ss-circle-18{
-    background-image: url(../images/18.jpg);
+    background-image: url(images/GA08.jpg);
 }
 .ss-circle-19{
-    background-image: url(../images/19.jpg);
+    background-image: url(images/BGA00.jpg);
 }
 .ss-circle-20{
-    background-image: url(../images/20.jpg);
+    background-image: url(images/BGA1.jpg);
 }
 .ss-circle-21{
-    background-image: url(../images/21.jpg);
+    background-image: url(images/BGA2.jpg);
 }
 .ss-circle-22{
-    background-image: url(../images/22.jpg);
+    background-image: url(images/BGA3.jpg);
 }
 .ss-circle-23{
-    background-image: url(../images/23.jpg);
+    background-image: url(images/BGA4.jpg);
 }
 .ss-circle-24{
-    background-image: url(../images/24.jpg);
+    background-image: url(images/BGA5.jpg);
 }
 .ss-circle-25{
-    background-image: url(../images/25.jpg);
+    background-image: url(images/BGA6.jpg);
 }
 .ss-circle-26{
-    background-image: url(../images/26.jpg);
+    background-image: url(images/BGA7.jpg);
 }
 .ss-circle-27{
-    background-image: url(../images/27.jpg);
+    background-image: url(images/BGA8.jpg);
 }
 .ss-circle-28{
-    background-image: url(../images/28.jpg);
+    background-image: url(images/BGA9.jpg);
 }
 .ss-circle-29{
-    background-image: url(../images/29.jpg);
+    background-image: url(images/BGA10.jpg);
 }
 .ss-circle-30{
-    background-image: url(../images/30.jpg);
+    background-image: url(images/BGA11.jpg);
+}
+.ss-circle-31{
+    background-image: url(images/BGA0.jpg);
+}
+
+@media screen and (max-width: 480px) {
+	.ss-container h2{
+    font-size: 16px;
+    text-transform: uppercase;
+    color: rgba(78,84,123,0.2);
+	text-shadow: 0px 1px 1px #fff;
+	padding: 20px 0px;
+}
+	.ss-right .custom{
+    padding-left: 15%;
+}
+	.ss-left .custom{
+    padding-right: 15%;
+}
+
 }

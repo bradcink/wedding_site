@@ -43,6 +43,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
     font-style: normal;
 }
+h6 {
+	font-family: "Montserrat", sans-serif;
+    font-weight: 150;
+    color: #F1F1F1;
+    font-style: normal;
+}
 
 #header-white{
 	color: #F1F1F1;
@@ -120,7 +126,7 @@ label {
     font-size: 16px; font-size: 1.6rem;
     font-style: normal;
     font-weight: 100;
-    opacity: .4;
+    opacity: .6;
     padding: 8px 0 8px 15px;
     text-transform: uppercase;
     width: 70%;
@@ -209,10 +215,38 @@ IMG.displayed {
 
 /* General Styling */
 
-.DivToScroll{   
-    
+#footer {
+    background-color: #336699;
+    border-top: 1px solid #336699;
+    color: #F1F1F1;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15)
+}
 
+#footer a {
+    color: #F1F1F1;
+    border-bottom: dotted 1px #F1F1F1
+}
 
+#footer a:hover {
+    color: #F1F1F1;
+    text-decoration: none;
+    border-bottom: solid 1px #F1F1F1
+}
+
+#footer .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#footer .project {
+    margin-top: 10px
+}
+
+#footer-thanks {
+    font-size: 8px;
+}
+
+.DivToScroll{       
     left: -1px;
     padding: 10px 7px 5px;
 }
