@@ -16,7 +16,13 @@ WeddingSite::Application.routes.draw do
     invitations: 'users/invitations'
   }
 
-  resources :users, :charges
+  resources :users do
+    collection do
+    post 'batch_invite'
+    end
+  end
+
+  resources :charges
   get "home/index"
   
   # The priority is based upon order of creation: first created -> highest priority.

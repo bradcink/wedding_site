@@ -7,13 +7,24 @@
               </div><!-- /span3 -->
             </div><!-- /row-fluid -->
             <div class="row-fluid content faq">
+              <h5 style="color: #F1F1F1;">Add a single user</h5>
                     <%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
                       <%= devise_error_messages! %>
                     <% resource.class.invite_key_fields.each do |field| -%>
-                      <%= f.input field %>
+                      <%= f.input field, label_html: {style: 'color: #F1F1F1;'} %>
                     <% end -%>
                     <%= f.button :submit, 'Add User', :class => 'btn-inverse-faq' %>
                     <% end %>
+                  </br>
+                  
+                  <h5 style="color: #F1F1F1;">Add multiple users</h5>
+                    <%= simple_form_for resource, :as => resource_name, :url => batch_invite_users_path(resource_name), :html => {:method => :post} do |f| %>
+                      <%= devise_error_messages! %>
+                      <%= text_area_tag :user_emails %>
+                    </br>
+                    <%= f.button :submit, 'Batch Invite', :class => 'btn-inverse-faq' %>
+                    <% end %>
+                  
             </div><!-- /row-fluid -->
           </div><!-- /container-fluid -->
 </section>

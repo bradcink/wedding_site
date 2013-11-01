@@ -39,8 +39,8 @@
                   </div><!-- /span12 -->
                 </div><!-- /row-fluid -->
                   <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>                
-                    <%= f.input :email, :autofocus => true %>
-                    <%= f.input :password %>
+                    <%= f.input :email, :autofocus => true, label_html: {style: 'color: #F1F1F1;'} %>
+                    <%= f.input :password, label_html: {style: 'color: #F1F1F1;'} %>
                     <%= f.button :submit, 'Sign In', :class => 'btn-inverse' %>
                   <% end %>
                 </div>

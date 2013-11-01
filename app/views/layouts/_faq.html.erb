@@ -10,9 +10,10 @@
               <div>
                 <button class="btn-inverse" id="password-reset"><a href="#"></a>Forgot Your Password?</button>
               </div>
+              </br>
                 <div id="password-reset-id" style="display:none;">
                   <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post , :class => 'form-vertical' }) do |f| %>
-                  <%= f.input :email, :required => true, :autofocus => true %>
+                  <%= f.input :email, :required => true, :autofocus => true, label_html: {style: 'color: #F1F1F1;'} %>
                   <%= f.button :submit, 'Send reset password info', :class => 'btn-inverse-faq' %>
                 <% end %>                   
               </div>

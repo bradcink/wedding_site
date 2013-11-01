@@ -54,6 +54,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def batch_invite
+    #Validate the user_emails field isn't blank and emails are valid
+    params[:user_emails].split(",").each do |email|
+      User.invite!(:email => email)
+    end
+    redirect_to root_path, notice: 'You just added a shite ton of people!'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
