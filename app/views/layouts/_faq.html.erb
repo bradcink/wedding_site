@@ -8,15 +8,33 @@
             </div><!-- /row-fluid -->
             <div class="row-fluid content faq">
               <div>
-                <button class="btn-inverse" id="password-reset"><a href="#"></a>Forgot Your Password?</button>
+                <button class="btn-inverse" id="password-reset"><a href="#password-reset-id"></a>Forgot Your Password?</button>
+                <button class="btn-inverse" id="password-reset"><a href="#invite-request-id"></a>Request an Invitation</button>
               </div>
               </br>
-                <div id="password-reset-id" style="display:none;">
+                <div id="password-reset-id" class="simple-form" style="display:none;">
                   <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post , :class => 'form-vertical' }) do |f| %>
                   <%= f.input :email, :required => true, :autofocus => true, label_html: {style: 'color: #F1F1F1;'} %>
-                  <%= f.button :submit, 'Send reset password info', :class => 'btn-inverse-faq' %>
+                  <%= f.button :submit, 'Reset password info', :class => 'btn-inverse-faq' %>
                 <% end %>                   
               </div>
+              <div id="invite-request-id" class="simple-form" style="display:none;">
+                <%= simple_form_for(message, :as => message_name, :html => {:class => 'form-vertical' }) do |f| %>
+                <% if @message.errors.any? %>
+                  <div class="error_messages">
+                    <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+                    <ul>
+                    <% @message.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+                  <%= f.input :name, label_html: {style: 'color: #F1F1F1;'} %><br />
+                  <%= f.input :email, label_html: {style: 'color: #F1F1F1;'} %><br />
+                  <%= f.button :submit, 'Request invitation ', :class => 'btn-inverse-faq' %>
+              <% end %>
+            </div>
             </div><!-- /row-fluid -->
           </div><!-- /container-fluid -->
 </section>

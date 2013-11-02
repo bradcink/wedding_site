@@ -12,6 +12,7 @@ gem "turbolinks"
 gem "jbuilder", "~> 1.2"
 gem 'figaro'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'active_attr'
 group :development do
   gem "guard-rspec"
   gem "pry"

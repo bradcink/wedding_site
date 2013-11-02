@@ -22,22 +22,20 @@ $(document).ready(function(){
                         divToToggle.slideToggle("fast");
                       });
                     $("#faq").on('click',function(){
-                        $("#faq-field").show();
+                        $("#faq-field").slideToggle("fast");
                         $("html, body").animate({scrollTop: $("#faq-field").offset().top});
-                        $("#edit-field").hide();
                          return false;
                       });
                     $("#edit").on('click',function(){
-                        $("#edit-field").show();
+                        $("#edit-field").slideToggle("fast");
                         $("html, body").animate({scrollTop: $("#edit-field").offset().top});
-                        $("#faq-field").hide();
+                        $("#add-user-field").hide()
                          return false;
                       });
                     $("#add-user").on('click',function(){
-                        $("#add-user-field").show();
+                        $("#add-user-field").slideToggle("fast");
                         $("html, body").animate({scrollTop: $("#add-user-field").offset().top});
                         $("#edit-field").hide();
-                        $("#faq-field").hide();
                          return false;
                       });
                     $("#next-button").click(function(){
