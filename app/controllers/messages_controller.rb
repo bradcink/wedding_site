@@ -8,9 +8,9 @@ class MessagesController < ApplicationController
        
     if @message.valid?
     	ContactForm.email_form(@message).deliver
-        redirect_to root_url, notice: "Invitation request sent! Please wait for your request to be processed."
+        redirect_to root_url, notice: "Invitation request sent!"
     else
-      	flash.now.alert = "Email could not be sent. Please check your entries."
+      	flash.now.alert = "Invitation failed. Please try again."
         render :new
     end
 
