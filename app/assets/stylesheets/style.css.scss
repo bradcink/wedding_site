@@ -58,6 +58,10 @@ p {
     margin: 0 10px 10px 0;
 }
 
+#small-text {
+	font-size: xx-small;
+}
+
 a {
 	color: #F1F1F1;
 	text-decoration: none;
@@ -732,6 +736,15 @@ div.row-fluid.content.faq {
 	}
 }
 
+@media screen and (min-width: 818px) {
+	#next-instafeed {
+			margin-top: 10%;
+			margin-right: 36.5%;
+		}
+		#prev-instafeed {
+			margin-top: 10%;
+		}
+}
 
 @media screen and (max-width: 1320px) {
 	
@@ -830,6 +843,26 @@ div.row-fluid.content.faq {
 	    padding-left: 105px;
 	    padding-right: 105px;
     }
+    .popin-instaslider{
+      background:#fff;
+      padding:8px;
+      box-shadow: 0 0 20px #999;
+      border-radius:2px;
+      max-height: 700px;
+      min-width:420px;
+      }
+
+    #bg img {
+      position:relative; 
+      top:0; 
+      left:0; 
+      right:0; 
+      bottom:0; 
+      margin:auto; 
+      min-width:420px;
+      min-height:400px;
+      opacity: 100;
+    }
 	
 
 }
@@ -897,6 +930,15 @@ div.row-fluid.content.faq {
 	#section4 .content .expand {
 		width: 100%;
 	}
+
+	#next-instafeed {
+			margin-top: 15%;
+			margin-right: 34.2%;
+		}
+		#prev-instafeed {
+			margin-top: 15%;
+		}
+
 
 }
 
@@ -967,8 +1009,33 @@ div.row-fluid.content.faq {
     #section5 .span8 {
 	    margin-top: 30px;
     }
-    
-	
+    #next-instafeed {
+			margin-top: 20%;
+			margin-right: 5.5%;
+		}
+		#prev-instafeed {
+			margin-top: 20%;
+		}
+		.popin-instaslider{
+      background:#fff;
+      padding:8px;
+      box-shadow: 0 0 20px #999;
+      border-radius:2px;
+      min-height: 140px;
+      min-width:140px;
+      }
+
+    #bg img {
+      position:relative; 
+      top:0; 
+      left:0; 
+      right:0; 
+      bottom:0; 
+      margin:auto; 
+      min-width:140px;
+      min-height:140px;
+      opacity: 100;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 649px) {
@@ -990,6 +1057,7 @@ div.row-fluid.content.faq {
 	#section1-index .intro h3 {
 		font-size: 20px; font-size: 2rem;
 	}
+
 
 }
 
@@ -1013,7 +1081,8 @@ div.row-fluid.content.faq {
 	}
 	#section1-index .intro h3 {
 	color: #F1F1F1;
-	}
+	}  	
+	
 }
 
 
@@ -1087,26 +1156,6 @@ div.row-fluid.content.faq {
 	    height: auto;
 	}
 
-	.popin-instaslider{
-      background:#fff;
-      padding:8px;
-      box-shadow: 0 0 20px #999;
-      border-radius:2px;
-      max-height: 200px;
-      max-width: 180px;
-      }
-
-    #bg img {
-      position:relative; 
-      top:0; 
-      left:0; 
-      right:0; 
-      bottom:0; 
-      margin:auto; 
-      min-width:180px;
-      min-height:200px;
-      opacity: 100;
-    }
     .next-instafeed {
       position: absolute;
       top: 59%;
@@ -1133,6 +1182,14 @@ div.row-fluid.content.faq {
       line-height: .5em;
       cursor: pointer;
     }
+
+    #next-instafeed {
+			margin-top: 30%;
+			margin-right: 3%;
+		}
+		#prev-instafeed {
+			margin-top: 30%;
+		}
 
 }
 
@@ -1476,4 +1533,3 @@ you can use the generic selector below, but it's slower:
   width: 120px;
   margin-bottom: 20px;   
 }
-

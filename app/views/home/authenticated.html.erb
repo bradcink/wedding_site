@@ -310,7 +310,7 @@
                 <h2>Social</h2>
               </div><!-- /span4 -->
             </div><!-- /row-fluid -->
-            <div class="row-fluid content">
+            <div class="row-fluid content" id="insta">
               <div class="span8">
                 <div class="row-fluid alt">
                   <h5><i class="icon-instagram icon-3x"></i></h5>
@@ -322,7 +322,6 @@
                    <div class="controls">
                     <a class="carousel-control left" id="prev-instafeed">&lsaquo;</a>
                     <a class="carousel-control right" id="next-instafeed">&rsaquo;</a>
-                    <script src="https://raw.github.com/stevenschobert/instafeed.js/master/instafeed.min.js"></script>
                     <!-- Grab My Latest Instagram Photo -->
                     <script type="text/javascript">
                       feed = new Instafeed({
@@ -404,26 +403,27 @@
                   <h3>Step 1.</h3>
                     <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :remote => true, :html => { :method => :put, :class => 'form-vertical', :id => 'donation', :format => :json }) do |f| %>
                       <%= f.input :donation_amount, :id => 'donate-amount', :input_html => { :data => :donation_amount} %>
+                      <p id="small-text">* All donations will be split evenly between One Way Ministries and the Mobile Archdiocesan Mexico Mission Trip<p>
                       <%= f.button :submit, 'Next', :class => 'btn-inverse', :id =>"next-button" %>
                     <% end %>
                 </div>
                 <div id="submit-payment-prep" style="display:none;">
                   <h3>Step 2.</h3>
-                  <h6>Donation Amount: </h6><p>Donation Amount:</p><p class="result" style="font-weight: bold"></p>
+                  <p>Donation Amount:</p><p class="result" style="font-weight: bold"></p>
                   <button class="btn-inverse" id="back-button">Go Back</button>
-                  <button class="btn-inverse" id="customButton">Pay With Card</button>
+                  <button class="btn-inverse" id="customButton">Pay With Card<span><i class="icon-credit-card"></i></span></button>
                   <%= form_tag charges_path do %>
                     <script>
                     $(document).ready(function(){
                     $('#next-button').click(function(){
                       $("form#donation").bind("ajax:success", function( xhr, data, status) {     
                       var serial = ($(this).serialize().split("=").pop());
-                      var amounts = $(".result").html(serial)//.prepend( "$" )
+                      var amounts = $(".result").html(serial).prepend( "$" )
                       ;
                       });
                     });
                     $('#customButton').click(function(){
-                        var amount = parseInt($(".result").html(), 10);;
+                        var amount = parseInt($(".result").html().substring(1), 10);
                           var token = function(res){
                           var $input = $('<input type=hidden name=stripeToken />').val(res.id);
                           $('form').append($input).submit();
@@ -460,7 +460,7 @@
                 <div class="span6 expand">
                   <h4>Guatemala</h4>
                   <div class="DivToScroll">
-                    <div class="DivWithScroll">My pastor often reminds my church that giving 2% of our year to make the gospel known in another context radically transforms the other 98% of our lives in our own context. Even a year and a half later, I am still finding this to be true. God made His provision, sovereignty, and grace very evident in every part of the trip I took with One Way Ministries to Guatemala. We spent our mornings alongside the faith family of New Jerusalem, Guatemala, the local church, and in grade schools leading vacation bible school for children whose homes were filled with  impoverty, domestic violence, and the like. In the afternoons, we traveled to the rural city of Sacajvela alongside women from New Jerusalem into the homes of families who had been estranged from the church, needed encouragement in the midst of tragedy, or were simply ready to hear the gospel. The people that I grew to know both on my team and in Guatemala greatly moved me and served as a catalyst for Brad and I deciding to ask you to shift your generosity towards One Way and The Mobile Archdiocesan Mexico Mission Trip. Your financial giving will support childcare to enable single parents to work, medical needs, and even basic needs to a Guatemalan community that would appreciate your sacrifice more than we could ever appreciate a gift. To learn more about One Way, visit http://www.1wayministries.org or contact me. “May God be gracious to us and bless usand make his face shine upon us, that your ways may be known on the earth, your salvation among all nations.” –Psalm 67:1-2</div>
+                    <div class="DivWithScroll">My pastor often reminds my church that giving 2% of our year to make the gospel known in another context radically transforms the other 98% of our lives in our own context. Even a year and a half later, I am still finding this to be true. God made His provision, sovereignty, and grace very evident in every part of the trip I took with One Way Ministries to Guatemala. We spent our mornings alongside the faith family of New Jerusalem, Guatemala, the local church, and in grade schools leading vacation bible school for children whose homes were filled with  impoverty, domestic violence, and the like. In the afternoons, we traveled to the rural city of Sacajvela alongside women from New Jerusalem into the homes of families who had been estranged from the church, needed encouragement in the midst of tragedy, or were simply ready to hear the gospel. The people that I grew to know both on my team and in Guatemala greatly moved me and served as a catalyst for Brad and I deciding to ask you to shift your generosity towards One Way and The Mobile Archdiocesan Mexico Mission Trip. Your financial giving will support childcare to enable single parents to work, medical needs, and even basic needs to a Guatemalan community that would appreciate your sacrifice more than we could ever appreciate a gift. To learn more about One Way, visit <a href="http://www.1wayministries.org" rel="external">http://www.1wayministries.org</a> or contact me. “May God be gracious to us and bless usand make his face shine upon us, that your ways may be known on the earth, your salvation among all nations.” –Psalm 67:1-2</div>
                   </div>
                 </div><!-- /span6 -->
                 <div class="span6 visible-desktop">
@@ -481,7 +481,7 @@
                 <div class="span6 expand">
                   <h4>Mexico</h4>
                   <div class="DivToScroll">
-                    <div class="DivWithScroll"><div>"Not all of us can do great things. But we can do small things with great love.” - Bl. Mother Teresa</div><div>While poverty manifests itself in many ways that often far surpass the archetypal view of being without material wealth, it was not until I traveled to the Yukutan that I truly understood how frivolous money was to happiness. The indigenous Mayan people of Akil, Mexico recognize how ineffably blessed even without adequate healthcare or modern amenities </div></div>
+                    <div class="DivWithScroll"><div>"Not all of us can do great things. But we can do small things with great love.” - Bl. Mother Teresa</div></br><div>While poverty manifests itself in many ways that often surpass the archetypal view of being without material wealth, it was not until I traveled to the Yukutan that I truly understood how frivolous money is to happiness. The indigenous Mayan people of Akil, Mexico recognize Christ provides fulfillment in life that the world cannot. Adequate healthcare, modern tools, and formal education are among the myriad amenities absent in this society.</div></br><div>Annually, the Mobile Archdiocese sends about a dozen high school students to work, pray, and live with the community in Akil for three weeks during the summer. Through the support of friends and family, I was blessed to have made this trip two consecutive years in 2006 & 2007. Early mornings and late evenings pouring concrete, re-roofing homes, and landscaping construction sites with machetes comprised many days. However, the stringent physical labor was offset by aiding mission-sponsored medical clinics, distributing clothes and shoes to the public, and simply playing with the children outside of Santa Ines Church at the center of town.</div></br><div>As the Mexican government has become more dangerous for visitors, unfortunately our trip has recently become irregular. Each year, the opportunity to travel south is evaluated by Father Dane (Gulf Shores, AL) and Padre Santos (Yukutan, Mexico). Grace Ann and I ask you foremost for your prayers that our respective trips will continue to change lives in the United States and Central America and especially for the individuals who touched our lives in New Jerusalem, Guatemala and Akil, Mexico. Inspired by the words of Mother Theresa, any contribution, however small or large, would delight us more than anything for ourselves!</div></div>
                   </div>
                 </div><!-- /span6 -->
                 <div class="span6 visible-desktop">
@@ -544,7 +544,7 @@
                     <div class="row-fluid content">
                       <h4 align="center">Hannah Dow</h4>
                       <h5 align="center">Matron of Honor</h4>
-                      <h6 align="center">Sister of the Bride | Handmatron to the Duchess of Cambridge</h4>
+                      <h6 align="center">Sister of the Bride | Publicist, lifelong friend, and confidant to the Duchess of Cambridge</h4>
                      
                     </div>
                 </div>
@@ -624,8 +624,6 @@
     </div><!-- /container -->
   </div><!-- /wrapper -->
   <!-- JAVASCRIPTS -->
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-  <script type="text/javascript" src="http://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
   <script src="https://checkout.stripe.com/v2/checkout.js"></script>
   <script>
     var map;
