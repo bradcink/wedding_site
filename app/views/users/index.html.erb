@@ -36,13 +36,13 @@
               <td></td>
               <td><%= user.rsvp_count %></td>
               <td>
-              <% if current_user.rsvp_confirmation == 1 %>
+              <% if user.rsvp_confirmation == 1 %>
                               <td>Attending</td>
                             <% end %>
-                            <% if current_user.rsvp_confirmation == 0 %>
+                            <% if user.rsvp_confirmation == 0 %>
                               <td>Not Attending</td>
                             <% end %>
-                            <% if current_user.rsvp_confirmation == 2 %>
+                            <% if user.rsvp_confirmation == 2 %>
                               <td>Undecided</td>
                             <% end %>
                           </td>
