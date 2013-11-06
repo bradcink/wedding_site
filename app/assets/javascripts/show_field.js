@@ -19,7 +19,7 @@ $(document).ready(function(){
                     $(".btn-inverse").on('click',function(){
                         var divToToggle = $( $(this).find("a").attr('href') );
                         $(".simple-form:visible").not(divToToggle).hide();
-                        divToToggle.slideToggle("fast");
+                        divToToggle.toggle("fast");
                         return false;
                       });
                     $("#faq").on('click',function(){
