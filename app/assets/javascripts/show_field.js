@@ -16,7 +16,7 @@ $(document).ready(function(){
                         }
                       });
 
-                    $(".btn-inverse").on('click',function(){
+                    $(".btn-inverse-no-data").on('click',function(){
                         var divToToggle = $( $(this).attr('href') );
                         $(".simple-form:visible").not(divToToggle).hide();
                         divToToggle.slideToggle("fast")

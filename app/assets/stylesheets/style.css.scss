@@ -401,6 +401,24 @@ IMG.displayed {
     width: 190px;
 }
 
+.btn-inverse-no-data {
+
+	background: none #336699;
+    color: #F1F1F1;
+    margin-top: 25px;
+    border: medium none;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px; font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 20px;
+    padding: 8px 14px;
+    text-align: left;
+    text-transform: uppercase;
+    width: 190px;
+}
+
 .btn-default, .btn-inverse {
 	border: medium none;
     cursor: pointer;
@@ -415,20 +433,20 @@ IMG.displayed {
     width: 190px;
 }
 
-.btn-inverse span, .btn-default span {
+.btn-inverse span, .btn-default span, .btn-inverse-no-data span {
 	font-weight: 700;
 }
 
-.btn-inverse.alt, .btn-default.alt {
+.btn-inverse.alt, .btn-default.alt, .btn-inverse-no-data.alt {
 	text-align: right;
 }
 
-.btn-inverse i, .btn-default i {
+.btn-inverse i, .btn-default i, .btn-inverse-no-data i {
 	float: right;
 	line-height: 20px;
 }
 
-.btn-inverse.alt i, .btn-default.alt i {
+.btn-inverse.alt i, .btn-default.alt i, .btn-inverse-no-data.alt i {
 	float: left;
 }
 
