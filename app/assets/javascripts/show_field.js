@@ -20,6 +20,7 @@ $(document).ready(function(){
                         var divToToggle = $( $(this).find("a").attr('href') );
                         $(".simple-form:visible").not(divToToggle).hide();
                         divToToggle.slideToggle("fast");
+                        return false;
                       });
                     $("#faq").on('click',function(){
                         $("#faq-field").slideToggle("fast");
