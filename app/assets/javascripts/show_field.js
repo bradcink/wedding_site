@@ -17,11 +17,12 @@ $(document).ready(function(){
                       });
 
                     $(".btn-inverse").on('click',function(){
-                        var divToToggle = $( $(this).find("a").attr('href') );
+                        var divToToggle = $( $(this).attr('href') );
                         $(".simple-form:visible").not(divToToggle).hide();
-                        divToToggle.toggle("fast");
+                        divToToggle.slideToggle("fast")
                         return false;
                       });
+
                     $("#faq").on('click',function(){
                         $("#faq-field").slideToggle("fast");
                         $("html, body").animate({scrollTop: $("#faq-field").offset().top});
