@@ -1,0 +1,2 @@
+class HghController < ApplicationController
+end

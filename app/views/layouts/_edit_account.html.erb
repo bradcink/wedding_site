@@ -8,9 +8,9 @@
             </div><!-- /row-fluid -->
             <div class="row-fluid content">
               <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
-                <%= f.input :first_name, :autofocus => true %>
-                <%= f.input :last_name %>
-                <%= f.input :email, :required => true %>
+                <%= f.input :first_name, :autofocus => true, :input_html => { :value => current_user.first_name } %>
+                <%= f.input :last_name, :input_html => { :value => current_user.last_name } %>
+                <%= f.input :email, :required => true, :input_html => { :value => current_user.email } %>
                 <% if current_user.password_required? %>
                   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
                   <%= f.input :password_confirmation, :required => false %>
@@ -33,8 +33,11 @@
                         <span class="slide-button btn btn-success"></span>
                       </div>
                       </br>
-                        <div class="btn switch switch-four" id="number_attending-edit" style="display:none;">
-                          <input id="rsvp_count_one-edit" name="user[rsvp_count]" value="1" type="radio" checked="">
+                        <div class="btn switch switch-five" id="number_attending-edit" style="display:none;">
+                          <input id="rsvp_count_zero-edit" name="user[rsvp_count]" value="0" type="radio" checked"">
+                          <label for="rsvp_count_zero-edit" onclick="" class="label-rsvp"><i class="fa fa-times"></i></label>
+
+                          <input id="rsvp_count_one-edit" name="user[rsvp_count]" value="1" type="radio">
                           <label for="rsvp_count_one-edit" onclick="" class="label-rsvp"><i class="icon-male"></i></label>
 
                           <input id="rsvp_count_two-edit" name="user[rsvp_count]" value="2" type="radio">
@@ -50,7 +53,7 @@
                       </div>
                     </div>
                   </div>
-
+                  <p id="small-text" style="text-align:center">* Per your addressed invitation, please indicate the number of guests that will be attending by December 21<sup style="font-size: 5pt;">st</sup><p>
                 <%= f.button :submit, 'Update', :class => 'btn-inverse' %>
               <% end %>
             </div>

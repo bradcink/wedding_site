@@ -1,0 +1,2 @@
+module HghHelper
+end

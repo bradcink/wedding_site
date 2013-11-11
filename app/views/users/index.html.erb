@@ -8,6 +8,7 @@
           <div class="span4">
             <h2>Users</h2>
             <h5>Download: <%= link_to "Excel", users_path(format: "xls"), {:style=>'color:#151515;'} %></h5>
+            <h5>Total Attending: <%= @users.sum('rsvp_count') %></h5>
           </div><!-- /span3 -->
         </div><!-- /row-fluid -->   
         <div class="span8">
@@ -51,6 +52,13 @@
               <%= render user %>
               </td>
               <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini btn-danger') unless user == current_user %></td>
+              <td><%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+                      <%= devise_error_messages! %>
+                    <% resource.class.invite_key_fields.each do |field| -%>
+                      <%= f.input field, :input_html => { :value => user.email }, :as => :hidden %>
+                    <% end -%>
+                    <%= f.button :submit, 'Resend invite', :class => 'btn btn-mini btn-warning' unless user == current_user %>
+                    <% end %></td>
               </tr>
             <% end %>
               </tbody>

@@ -22,7 +22,7 @@ WeddingSite::Application.routes.draw do
     end
   end
 
-  resources :charges, :messages
+  resources :charges, :messages, :hgh
   get "home/index"
   
   # The priority is based upon order of creation: first created -> highest priority.
