@@ -12,6 +12,8 @@ gem "turbolinks"
 gem "jbuilder", "~> 1.2"
 gem 'figaro'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+gem 'datatables', :git => 'git://github.com/Caseproof/datatables.git'
 gem 'active_attr'
 group :development do
   gem "guard-rspec"

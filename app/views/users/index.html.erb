@@ -12,54 +12,44 @@
           </div><!-- /span3 -->
         </div><!-- /row-fluid -->   
         <div class="span8">
-          <table class="table table-condensed">
+          <table id="users">
             <thead>
               <tr>
-                <th>Username</th>
+                <th>Name</th>
                 <th>Email</th>
                 <th>Registered</th>
                 <th>Role</th>
-                <th></th>
-                <th>#</th>
-                <th></th>
+                <th>Attending</th>
                 <th>RSVP</th>
-                <th></th>
-                <th></th>
+                <th>Change Role</th>
+                <th>Delete User</th>
+                <th>Re-invite</th>
               </tr>
             </thead>
           <tbody>
           <% @users.each do |user| %>
             <tr>
-              <td><%= user.full_name %></td>
-              <td><%= user.email %></td>
-              <td><%= user.created_at.to_date %></td>
-              <td><%= user.roles.join(', ').titleize unless user.roles.first.nil? %></td>
-              <td></td>
-              <td><%= user.rsvp_count %></td>
-              <td>
-              <% if user.rsvp_confirmation == 1 %>
-                              <td>Attending</td>
-                            <% end %>
-                            <% if user.rsvp_confirmation == 0 %>
-                              <td>Not Attending</td>
-                            <% end %>
-                            <% if user.rsvp_confirmation == 2 %>
-                              <td>Undecided</td>
-                            <% end %>
-                          </td>
-              <td>
-              <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini btn-primary" type="button">Change role</a>
-              <%= render user %>
-              </td>
-              <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini btn-danger') unless user == current_user %></td>
-              <td><%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+              <td align="center"><%= user.full_name %></td>
+              <td align="center"><%= user.email %></td>
+              <td align="center"><%= user.created_at.to_date %></td>
+              <td align="center"><%= user.roles.join(', ').titleize unless user.roles.first.nil? %></td>
+              <td align="center"><%= user.rsvp_count %></td>
+              <td align="center"><%= user.rsvp_confirmation %></td>
+
+              <td align="right"><%= simple_form_for user, :url => user_path(user), :html => {:method => :put, :class => 'form-vertical' } do |f| %>
+                    <%= f.input :roles, :collection => AppConfig.roles, :as => :check_boxes, :label_method => lambda {|r| r.titleize}, :label => false, :item_wrapper_class => 'inline', html: {style: 'align: left;'}, checked: user.roles %>
+                    <%= f.submit "Change Role", :class => "btn-inverse" %>
+                    <% end %></td>
+              <td align="center"><%= link_to('<i class="fa fa-minus-circle" style="color: red;"></i>'.html_safe, user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete) unless user == current_user %></td>
+              <td align="center"><%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
                       <%= devise_error_messages! %>
                     <% resource.class.invite_key_fields.each do |field| -%>
                       <%= f.input field, :input_html => { :value => user.email }, :as => :hidden %>
                     <% end -%>
-                    <%= f.button :submit, 'Resend invite', :class => 'btn btn-mini btn-warning' unless user == current_user %>
-                    <% end %></td>
-              </tr>
+                    <%= link_to_submit('<i class="fa fa-reply" style="color: blue;"></i>'.html_safe) unless user == current_user %>        
+                  <% end %>
+              </td>
+            </tr>
             <% end %>
               </tbody>
           </table>
