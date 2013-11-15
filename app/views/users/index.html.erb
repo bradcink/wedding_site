@@ -27,6 +27,7 @@ function reloadPage()
                 <th>Name</th>
                 <th>Email</th>
                 <th>Registered</th>
+                <th>Last_Login</th>
                 <th>Role</th>
                 <th>Attending</th>
                 <th>RSVP</th>
@@ -41,10 +42,16 @@ function reloadPage()
               <td align="center"><%= user.full_name %></td>
               <td align="center"><%= user.email %></td>
               <td align="center"><%= user.created_at.to_date %></td>
+              <td align="center"><%= user.last_sign_in_at.to_s %></td>
               <td align="center"><%= user.roles.join(', ').titleize unless user.roles.first.nil? %></td>
               <td align="center"><%= user.rsvp_count %></td>
-              <td align="center"><%= user.rsvp_confirmation %></td>
-
+              <% if user.rsvp_confirmation == 0 %>
+                <td align="center">Declined</td>
+                <% elsif user.rsvp_confirmation == 1 %>
+                <td align="center">Attending</td>
+                <% else %>
+                <td align="center">Undecided</td>
+              <% end %>
               <td align="right"><%= simple_form_for user, :url => user_path(user), :html => {:method => :put, :class => 'form-vertical' } do |f| %>
                     <%= f.input :roles, :collection => AppConfig.roles, :as => :check_boxes, :label_method => lambda {|r| r.titleize}, :label => false, :item_wrapper_class => 'inline', html: {style: 'align: left;'}, checked: user.roles %>
                     <%= f.submit "Change Role", :class => "btn-inverse" %>

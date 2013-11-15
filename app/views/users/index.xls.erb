@@ -11,8 +11,9 @@
         <Cell><Data ss:Type="String">Email</Data></Cell>
         <Cell><Data ss:Type="String">Registered Date</Data></Cell>
         <Cell><Data ss:Type="String">Role</Data></Cell>
-        <Cell><Data ss:Type="String">#</Data></Cell>
+        <Cell><Data ss:Type="String">Attending</Data></Cell>
         <Cell><Data ss:Type="String">RSVP</Data></Cell>
+        <Cell><Data ss:Type="String">Donation</Data></Cell>
       </Row>
     <% @users.each do |user| %>
       <Row>
@@ -21,7 +22,14 @@
         <Cell><Data ss:Type="String"><%= user.created_at.to_date %></Data></Cell>
         <Cell><Data ss:Type="String"><%= user.roles.join(', ').titleize unless user.roles.first.nil? %></Data></Cell>
         <Cell><Data ss:Type="String"><%= user.rsvp_count %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= user.rsvp_confirmation %></Data></Cell>
+        <% if user.rsvp_confirmation == 0 %>
+          <Cell><Data ss:Type="String">Declined</Data></Cell>
+        <% elsif user.rsvp_confirmation == 1 %>
+          <Cell><Data ss:Type="String">Attending</Data></Cell>
+        <% else %>
+          <Cell><Data ss:Type="String">Undecided</Data></Cell>
+        <% end %>
+        <Cell><Data ss:Type="String"><%= user.donation_amount %></Data></Cell>
       </Row>
     <% end %>
     </Table>
