@@ -20,7 +20,7 @@
       <% if current_user.has_role? :admin %>
         <nav id="nav" role="naviagtion">
           <ul class="unstyled">
-            <li><%= link_to'<i class="icon-magic"></i><span>Admin</span>'.html_safe, users_path %></li>
+            <li id="users_view"><a href="http://www.sooter-cink-wedding.com/users"><i class="icon-magic"></i><span>Admin</span></a></li>
             <li id="add-user"><a href="#"><i class="icon-plus"></i><span>Add User</span></a></li>
           </ul>
         </nav>
