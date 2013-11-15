@@ -1,3 +1,11 @@
+<head>
+  <script>
+function reloadPage()
+  {
+  location.reload();
+  }
+</script>
+</head>
 <body>
   <div id="wrapper">
   <%= render 'layouts/sidebar' %>
@@ -9,6 +17,7 @@
             <h2>Users</h2>
             <h5>Download: <%= link_to "Excel", users_path(format: "xls"), {:style=>'color:#151515;'} %></h5>
             <h5>Total Attending: <%= @users.sum('rsvp_count') %></h5>
+            <h5><a class="btn-inverse" onclick="reloadPage()">View as Datatable<span><i class="fa fa-table"></i></a></h5>
           </div><!-- /span3 -->
         </div><!-- /row-fluid -->   
         <div class="span8">
