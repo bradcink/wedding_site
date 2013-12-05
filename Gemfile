@@ -46,3 +46,4 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "hashugar", github: "alex-klepa/hashugar"
 gem "rails_12factor"
+gem 'newrelic_rpm'
