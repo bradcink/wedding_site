@@ -52,12 +52,12 @@ function reloadPage()
                 <% else %>
                 <td align="center">Undecided</td>
               <% end %>
-              <td align="right"><%= simple_form_for user, :url => user_path(user), :html => {:method => :put, :class => 'form-vertical' } do |f| %>
+              <td align="right"><%= simple_form_for user, :url => user_path(user), :remote => true, :html => {:method => :put, :class => 'form-vertical' } do |f| %>
                     <%= f.input :roles, :collection => AppConfig.roles, :as => :check_boxes, :label_method => lambda {|r| r.titleize}, :label => false, :item_wrapper_class => 'inline', html: {style: 'align: left;'}, checked: user.roles %>
                     <%= f.submit "Change Role", :class => "btn-inverse" %>
                     <% end %></td>
               <td align="center"><%= link_to('<i class="fa fa-minus-circle" style="color: red;"></i>'.html_safe, user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete) unless user == current_user %></td>
-              <td align="center"><%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+              <td align="center"><%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :remote => true, :html => {:method => :post} do |f| %>
                       <%= devise_error_messages! %>
                     <% resource.class.invite_key_fields.each do |field| -%>
                       <%= f.input field, :input_html => { :value => user.email }, :as => :hidden %>
